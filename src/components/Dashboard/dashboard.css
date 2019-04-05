@@ -1,0 +1,31 @@
+
+.dashboard button:focus {
+    outline: none;
+}
+
+.dashboard button {
+    border: none;
+    padding: 10px;
+
+}
+
+.dashboard .notShowing {
+    border-bottom: 3px solid transparent !important;
+}
+
+.dashboard .showing {
+    border-bottom: 3px solid #238BFB !important;
+}
+
+.left-dashboard {
+    background-color: #F8F8F8;
+    padding-top: 4.2em;
+}
+
+.right-dashboard {
+    background-color: #F4F4F4;
+    border-left: 0.1px solid #CDCDCD;
+    padding-top: 4.2em;
+    /*position: fixed !important;*/
+    /*right: 0 !important;*/
+}

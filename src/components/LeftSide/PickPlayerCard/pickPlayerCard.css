@@ -1,0 +1,37 @@
+
+
+.editablePick:hover {
+     background-color: #238BFB;
+     color: white;
+     cursor: pointer;
+    /*-webkit-transition: 0.1s; !* Safari *!*/
+    /*transition: 0.1s;*/
+ }
+
+.editablePick:focus {
+    cursor: pointer;
+}
+
+.editablePick:hover span.info {
+    display: none;
+    /*-webkit-transition: 2s; !* Safari *!*/
+    /*transition: 2s;*/
+}
+
+.editPickLabel{
+    display: none;
+
+}
+
+.editablePick:hover span.editPickLabel{
+    display: contents;
+}
+
+.focusPick {
+    cursor: not-allowed;
+}
+
+.md-card .info {
+    cursor: default;
+}
+
