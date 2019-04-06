@@ -12,11 +12,11 @@ class PlayerSearchList extends Component {
         return (
             <div className="search-list-container card">
                 <ul className="mockdraftlist mt-4">
-                    { this.props.searchResults.map((player) => {
-                        if (player)
+                    { this.props.searchResults.map((result) => {
+                        if (result)
                             return (
                                 <li key={i++} >
-                                    <PlayerRow player={player}/>
+                                    <PlayerRow result={ result } type={ this.props.type }/>
                                 </li>
                             );
                             return ("")

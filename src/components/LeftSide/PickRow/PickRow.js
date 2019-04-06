@@ -26,7 +26,7 @@ class PickRow extends Component {
         return (
             <div>
                 <div className={`d-flex flex-row col-12 ${focusClass}`}>
-                    <PickTeamCard teamId={pick.teamId} pickNum={pick.pickNum}/>
+                    <PickTeamCard teamId={pick.teamId} pickId={pick.id} pickNum={pick.pickNum} focusPick={isFocusPick}/>
                     <PickPlayerCard playerId={pick.playerId} pickId={pick.id} focusPick={isFocusPick}/>
                 </div>
                 <hr />

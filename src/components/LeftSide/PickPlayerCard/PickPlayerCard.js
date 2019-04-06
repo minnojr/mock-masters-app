@@ -17,7 +17,7 @@ class PickPlayerCard extends Component {
         let editablePick = focusPick ? "" : "editablePick";
 
         return (
-            <div className={`d-flex card p-3 col-9 md-card ${editablePick}`} onClick={this.handleEditClick}>
+            <div className={`d-flex card p-3 col-8 md-card ${editablePick}`} onClick={this.handleEditClick}>
                 <span className="info">
                     { player.name }, { player.position }, { player.school }, { player.conference }, { player.ofdOrDef }
                 </span>

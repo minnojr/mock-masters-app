@@ -36,21 +36,21 @@ let picks = {
     '1001': {
       id: '1001',
       pickNum: '1',
-      teamId: '25',
+      teamId: '1',
       playerId: '0',
       mockdraftId: '100'
     },
     '1002': {
       id: '1002',
       pickNum: '2',
-      teamId: '49',
+      teamId: '2',
       playerId: '0',
       mockdraftId: '100'
     },
     '1003': {
         id: '1003',
         pickNum: '3',
-        teamId: '25',
+        teamId: '3',
         playerId: '1',
         mockdraftId: '100'
 
@@ -58,7 +58,7 @@ let picks = {
     '1004': {
         id: '1004',
         pickNum: '4',
-        teamId: '32',
+        teamId: '4',
         playerId: '0',
         mockdraftId: '100'
 
@@ -66,7 +66,7 @@ let picks = {
     '1005': {
         id: '1005',
         pickNum: '5',
-        teamId: '25',
+        teamId: '5',
         playerId: '1',
         mockdraftId: '100'
 
@@ -74,7 +74,7 @@ let picks = {
     '1006': {
         id: '1006',
         pickNum: '6',
-        teamId: '25',
+        teamId: '6',
         playerId: '0',
         mockdraftId: '100'
 
@@ -82,7 +82,7 @@ let picks = {
     '1007': {
         id: '1007',
         pickNum: '7',
-        teamId: '25',
+        teamId: '7',
         playerId: '0',
         mockdraftId: '100'
 
@@ -90,7 +90,7 @@ let picks = {
     '1008': {
         id: '1008',
         pickNum: '8',
-        teamId: '25',
+        teamId: '8',
         playerId: '2',
         mockdraftId: '100'
 
@@ -98,7 +98,7 @@ let picks = {
     '1009': {
         id: '1009',
         pickNum: '9',
-        teamId: '25',
+        teamId: '9',
         playerId: '0',
         mockdraftId: '100'
 
@@ -106,7 +106,7 @@ let picks = {
     '1010': {
         id: '1010',
         pickNum: '10',
-        teamId: '32',
+        teamId: '10',
         playerId: '1',
         mockdraftId: '100'
 
@@ -114,7 +114,7 @@ let picks = {
     '1011': {
         id: '1011',
         pickNum: '11',
-        teamId: '25',
+        teamId: '1',
         playerId: '0',
         mockdraftId: '100'
 
@@ -122,7 +122,7 @@ let picks = {
     '1012': {
         id: '1012',
         pickNum: '12',
-        teamId: '25',
+        teamId: '2',
         playerId: '0',
         mockdraftId: '100'
 
@@ -130,7 +130,7 @@ let picks = {
     '1013': {
         id: '1013',
         pickNum: '13',
-        teamId: '25',
+        teamId: '3',
         playerId: '0',
         mockdraftId: '100'
 
@@ -138,7 +138,7 @@ let picks = {
     '1014': {
         id: '1014',
         pickNum: '14',
-        teamId: '49',
+        teamId: '4',
         playerId: '0',
         mockdraftId: '100'
 
@@ -146,7 +146,7 @@ let picks = {
     '1015': {
         id: '1015',
         pickNum: '15',
-        teamId: '25',
+        teamId: '5',
         playerId: '0',
         mockdraftId: '100'
 
@@ -154,7 +154,7 @@ let picks = {
     '1016': {
         id: '1016',
         pickNum: '16',
-        teamId: '25',
+        teamId: '6',
         playerId: '0',
         mockdraftId: '100'
 
@@ -162,7 +162,7 @@ let picks = {
     '1017': {
         id: '1017',
         pickNum: '17',
-        teamId: '25',
+        teamId: '7',
         playerId: '0',
         mockdraftId: '100'
 
@@ -170,7 +170,7 @@ let picks = {
     '1018': {
         id: '1018',
         pickNum: '18',
-        teamId: '25',
+        teamId: '8',
         playerId: '1',
         mockdraftId: '100'
 
@@ -178,7 +178,7 @@ let picks = {
     '1019': {
         id: '1019',
         pickNum: '19',
-        teamId: '25',
+        teamId: '9',
         playerId: '0',
         mockdraftId: '100'
 
@@ -186,7 +186,7 @@ let picks = {
     '1020': {
         id: '1020',
         pickNum: '20',
-        teamId: '49',
+        teamId: '10',
         playerId: '2',
         mockdraftId: '100'
 
@@ -194,7 +194,7 @@ let picks = {
     '1021': {
         id: '1021',
         pickNum: '21',
-        teamId: '32',
+        teamId: '1',
         playerId: '0',
         mockdraftId: '100'
 
@@ -202,7 +202,7 @@ let picks = {
     '1022': {
         id: '1022',
         pickNum: '22',
-        teamId: '25',
+        teamId: '2',
         playerId: '0',
         mockdraftId: '100'
 
@@ -210,7 +210,7 @@ let picks = {
     '1023': {
         id: '1023',
         pickNum: '23',
-        teamId: '25',
+        teamId: '3',
         playerId: '2',
         mockdraftId: '100'
 
@@ -218,7 +218,7 @@ let picks = {
     '1024': {
         id: '1024',
         pickNum: '24',
-        teamId: '49',
+        teamId: '4',
         playerId: '1',
         mockdraftId: '100'
 
@@ -226,7 +226,7 @@ let picks = {
     '1025': {
         id: '1025',
         pickNum: '25',
-        teamId: '32',
+        teamId: '5',
         playerId: '0',
         mockdraftId: '100'
 
@@ -234,7 +234,7 @@ let picks = {
     '1026': {
         id: '1026',
         pickNum: '26',
-        teamId: '25',
+        teamId: '6',
         playerId: '0',
         mockdraftId: '100'
 
@@ -242,7 +242,7 @@ let picks = {
     '1027': {
         id: '1027',
         pickNum: '27',
-        teamId: '25',
+        teamId: '7',
         playerId: '0',
         mockdraftId: '100'
 
@@ -250,7 +250,7 @@ let picks = {
     '1028': {
         id: '1028',
         pickNum: '28',
-        teamId: '25',
+        teamId: '8',
         playerId: '2',
         mockdraftId: '100'
 
@@ -258,7 +258,7 @@ let picks = {
     '1029': {
         id: '1029',
         pickNum: '29',
-        teamId: '49',
+        teamId: '9',
         playerId: '0',
         mockdraftId: '100'
 
@@ -266,7 +266,7 @@ let picks = {
     '1030': {
         id: '1030',
         pickNum: '30',
-        teamId: '32',
+        teamId: '10',
         playerId: '1',
         mockdraftId: '100'
 
@@ -274,7 +274,7 @@ let picks = {
     '1031': {
         id: '1031',
         pickNum: '31',
-        teamId: '25',
+        teamId: '1',
         playerId: '0',
         mockdraftId: '100'
 
@@ -282,7 +282,7 @@ let picks = {
     '1032': {
         id: '1032',
         pickNum: '32',
-        teamId: '25',
+        teamId: '2',
         playerId: '0',
         mockdraftId: '100'
     }
@@ -556,44 +556,44 @@ let players = {
 };
 
 let teams = {
-  '25': {
-      id: '25',
+  '1': {
+      id: '1',
       name: 'Steelers'
   },
-  '49': {
-      id: '49',
+  '2': {
+      id: '2',
       name: '49ers'
   },
-  '32': {
-      id: '32',
+  '3': {
+      id: '3',
       name: 'Browns'
   },
-  'seahawks': {
-      id: 'seahawks',
+  '4': {
+      id: '4',
       name: 'Seahawks'
   },
-    'steelers2': {
-        id: 'steelers',
+    '5': {
+        id: '5',
         name: 'Steelers'
     },
-    '49ers2': {
-        id: '49ers',
+    '6': {
+        id: '6',
         name: '49ers'
     },
-    'browns2': {
-        id: 'browns',
+    '7': {
+        id: '7',
         name: 'Browns'
     },
-    'seahawks2': {
-        id: 'seahawks',
+    '8': {
+        id: '8',
         name: 'Seahawks'
     },
-    'steelers3': {
-        id: 'steelers',
+    '9': {
+        id: '9',
         name: 'Steelers'
     },
-    '49ers3': {
-        id: '49ers',
+    '10': {
+        id: '10',
         name: '49ers'
     },
     'browns3': {

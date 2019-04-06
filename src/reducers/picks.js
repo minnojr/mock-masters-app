@@ -1,6 +1,7 @@
 import {
     RECEIVE_PICKS,
-    EDIT_PICK
+    EDIT_PICK_PLAYER,
+    EDIT_PICK_TEAM
 } from "../actions/picks";
 
 export default function picks ( state = {}, action ) {
@@ -10,12 +11,20 @@ export default function picks ( state = {}, action ) {
                 ...state,
                 ...action.picks
             };
-        case EDIT_PICK :
+        case EDIT_PICK_PLAYER :
             return {
                 ...state,
                 [action.id]: {
                     ...state[action.id],
                     playerId: action.playerId
+                }
+            };
+        case EDIT_PICK_TEAM :
+            return {
+                ...state,
+                [action.id]: {
+                    ...state[action.id],
+                    teamId: action.teamId
                 }
             };
         default :

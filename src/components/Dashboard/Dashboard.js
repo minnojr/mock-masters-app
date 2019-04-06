@@ -12,7 +12,7 @@ class Dashboard extends Component {
         showing: "leftSide"
     };
 
-    toggleAnswers = (e) => {
+    toggleDashboards = (e) => {
         const toggleTo = e.target.value;
 
         if(this.state.showing !== e.target.value) {
@@ -41,8 +41,8 @@ class Dashboard extends Component {
                 <MediaQuery query="(max-width: 935px)">
                     <div className="d-flex flex-column col-12 container p-0">
                         <div className="d-flex col-12 justify-content-center p-0">
-                            <button className={this.state.showing === "leftSide" ? 'showing' : 'notShowing'} value={"leftSide"} onClick={this.toggleAnswers}>My Mock Draft</button>
-                            <button className={this.state.showing === "rightSide" ? 'showing' : 'notShowing'}  value={"rightSide"} onClick={this.toggleAnswers}>Player Search</button>
+                            <button className={this.state.showing === "leftSide" ? 'showing' : 'notShowing'} value={"leftSide"} onClick={this.toggleDashboards}>My Mock Draft</button>
+                            <button className={this.state.showing === "rightSide" ? 'showing' : 'notShowing'}  value={"rightSide"} onClick={this.toggleDashboards}>Player Search</button>
                         </div>
                         <hr />
                         { this.state.showing === "leftSide"

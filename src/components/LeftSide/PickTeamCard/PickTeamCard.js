@@ -1,25 +1,81 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { editPickTeam } from "../../../actions/picks";
+import './pickteamcard.css'
+
+// import
 
 class PickTeamCard extends Component {
 
+    state = {
+        listOpen: false
+    };
+
+    handleEditTeam (team)  {
+
+        const { pickId } = this.props;
+
+        this.props.dispatch(editPickTeam(pickId, team));
+    };
+
+    toggleList = () => {
+        this.setState(prevState => ({
+            listOpen: !prevState.listOpen
+        }))
+    };
+
     render() {
 
-        const { team, pickNum } = this.props;
+        const { team, pickNum, focusPick, allTeams } = this.props;
+        const { listOpen } = this.state;
 
+        let key = 0;
         return (
-            <div className="mr-3 card p-3 col-3 md-card">
-                {pickNum} | { team.name }
+            <div className="mr-3 card p-3 col-4 md-card">
+                {pickNum} | {team.name}
             </div>
         )
     }
 }
 
-function mapStateToProps({ teams }, { teamId }) {
+function mapStateToProps({ teams }, { teamId, pickId }) {
+    let teamArr = [];
+
+    for(let team in teams) {
+        teamArr.push(teams[team]);
+    }
 
     return {
-        team: teams[teamId] ? teams[teamId] : ""
+        team: teams[teamId] ? teams[teamId] : "",
+        allTeams: teamArr,
+        pickId,
+        teamId
     }
 }
 
 export default connect(mapStateToProps)(PickTeamCard);
+//
+// <div className="mr-3 card p-3 col-4 md-card">
+//     { !focusPick &&
+//     <span>
+//                         {pickNum} | {team.name}
+//                     </span>
+//     }
+//     { focusPick &&
+//     <span>
+//                         <span onClick={() => this.toggleList()}>
+//                             {pickNum} | { team.name }
+//                             {listOpen
+//                                 ? "OPEN"
+//                                 : "CLOSE"
+//                             }
+//                         </span>
+//         { listOpen &&
+//         <ul className="card edit-team-list">
+//             {allTeams.map((team) => (
+//                 <li className="dd-list-item" key={key++} onClick={() => this.handleEditTeam(team.id)}>{team.name}</li>
+//             ))}
+//         </ul>
+//         }
+//                     </span>
+//     }
