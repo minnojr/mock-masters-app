@@ -1,4 +1,18 @@
+.nav-left {
+    background-color: #F54444;
+    padding: 10px 20px;
+    max-height: 40px;
+    flex-grow: 2;
+    color: white;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
 .mockdraftside {
     position: fixed;
     bottom: 0;
+}
+
+.md-header {
+    font-weight: 600;
 }

@@ -2,11 +2,18 @@ import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoadingBar from "react-redux-loading";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserEdit } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
+import './App.css'
 
 import { handleInitialData } from "../../actions/shared";
 
 import Dashboard from '../Dashboard/Dashboard'
 import Nav from "../Nav/Nav";
+import SignInCode from '../SignIn/SignInCode'
 
 class App extends Component {
     componentDidMount() {
@@ -16,19 +23,21 @@ class App extends Component {
 
 
     render() {
+        library.add(faUserEdit);
+        library.add(faPlus);
+
         return (
             <Router>
                 <Fragment>
                     <LoadingBar />
-                    <div className='d-flex col-12 container p-0'>
-                        <div className="col-12 p-0">
-                            <Nav />
+                    <div className="app">
+                            {/*<Nav />*/}
+                            {/*<SignInCode />*/}
                             { this.props.loading === true
                                 ? <span>Loading...</span>
                                 :
                                 <Route path='/' exact component={ Dashboard } />
                             }
-                        </div>
                     </div>
                 </Fragment>
             </Router>

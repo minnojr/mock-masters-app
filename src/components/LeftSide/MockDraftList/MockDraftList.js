@@ -18,9 +18,7 @@ class MockDraftList extends Component {
 
         let key=0;
         return (
-            <div>
-                <h3 className="text-center mb-4">MOCK DRAFT</h3>
-
+            <div className="mockdraft-container">
                 <ul className="mockdraftlist">
 
                     {mockDraftPicks.map((pick) =>
@@ -40,7 +38,6 @@ class MockDraftList extends Component {
 }
 
 function mapStateToProps({ picks, focusPick }, { mockdraft }) {
-    // console.log(focusPick)
 
     return {
         mockDraftPicks: mockdraft ? mockdraft.picks.map(pick => picks[pick]) : null,

@@ -27,14 +27,14 @@ class Dashboard extends Component {
             <div className="dashboard">
 
                 <MediaQuery query="(min-width: 935px)">
-                    <div className="d-flex col-12 container p-0">
-                        <div className="left-dashboard d-flex col-6 justify-content-center pl-0 pr-0">
+
+                        {/*<div className="left-dashboard d-flex col-6 justify-content-center pl-0 pr-0">*/}
                             <MockDraftSide />
-                        </div>
-                        <div className="right-dashboard d-flex col-6 justify-content-center">
+                        {/*</div>*/}
+                        {/*<div className="right-dashboard d-flex col-6 justify-content-center">*/}
                             <PlayerSearchSide />
-                        </div>
-                    </div>
+                        {/*</div>*/}
+
                 </MediaQuery>
 
 

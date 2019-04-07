@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { editPickTeam } from "../../../actions/picks";
 import './pickteamcard.css'
 
-// import
-
 class PickTeamCard extends Component {
 
     state = {
@@ -28,11 +26,19 @@ class PickTeamCard extends Component {
 
         const { team, pickNum, focusPick, allTeams } = this.props;
         const { listOpen } = this.state;
+        let abv = team.abbrev;
+
+        let p = require('../../../assets/img/teams/' + abv + '-team.png');
 
         let key = 0;
         return (
-            <div className="mr-3 card p-3 col-4 md-card">
-                {pickNum} | {team.name}
+            <div className="d-flex card p-3 col-4 mr-2 md-card br5">
+                <span className="info">
+                    <span className="pick-num mr-4">{pickNum}</span>
+                    <span>
+                        <img src={p} height="75" width="75" alt="team-logo"/>
+                    </span>
+                </span>
             </div>
         )
     }

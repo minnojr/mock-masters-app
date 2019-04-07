@@ -1,5 +1,15 @@
 button.add-btn {
     background-color: #FEE3E3;
+    border-radius: 3px;
+    border: 0.5px solid #979797;
+    width: 8%;
+    max-height: 40px;
+    font-size: 12px !important;
+}
+
+button.add-btn:hover {
+    background-color: white;
+    border: 0.5px solid #979797;
 }
 
 button.searchToggle:focus {
@@ -13,9 +23,69 @@ button.searchToggle {
 }
 
 .notShowing {
-    border-bottom: 3px solid transparent !important;
+    /*border-bottom: 3px solid transparent !important;*/
+    border: 0.5px solid transparent !important;
 }
 
 .showing {
-    border-bottom: 3px solid #238BFB !important;
+    /*border-bottom: 3px solid #238BFB !important;*/
+    border: 0.5px solid lightgrey !important;
+}
+
+.right-side button {
+    width: 50%;
+}
+
+.border-right-grey {
+    border: 0.5px solid lightgrey !important;
+}
+
+.player-row {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 14px;
+}
+
+.player-row-num {
+    text-align: left;
+    /*flex-grow: 2;*/
+    max-width: 12%;
+    min-width: 12%;
+}
+
+.player-row-name {
+    max-width: 24%;
+    min-width: 24%;
+    text-align: left;
+    /*flex-grow: 3;*/
+}
+
+.player-row-position {
+    max-width: 10%;
+    min-width: 10%;
+    text-align: center;
+    /*flex-grow: 1;*/
+}
+
+.player-row-school {
+    max-width: 20%;
+    min-width: 20%;
+    /*flex-grow: 3;*/
+}
+
+.player-row-conference {
+    max-width: 10%;
+    min-width: 10%;
+    /*flex-grow: 2;*/
+}
+
+.player-row-offOrDef {
+    max-width: 10%;
+    min-width: 10%;
+    /*flex-grow: 1;*/
+}
+
+.team-row-name {
+    max-width: 50%;
+    min-width: 50%;
 }

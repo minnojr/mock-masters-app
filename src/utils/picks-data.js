@@ -1,0 +1,226 @@
+export let picks = {
+    "uxdmcdghcaisq1dat5tqes":{
+    "id":"uxdmcdghcaisq1dat5tqes",
+        "pickNum":"1",
+        "teamId":"1",
+        "playerId":"3jpdkuwa4lwgqrai7rduq",
+        "mockdraftId":"100"
+},
+    "ua8b8jtgwonje00xsaey":{
+    "id":"ua8b8jtgwonje00xsaey",
+        "pickNum":"2",
+        "teamId":"2",
+        "playerId":"ej1pyik0ijwen04ls2fbak",
+        "mockdraftId":"100"
+},
+    "x4uvnmpz0wa82perqb2vol":{
+    "id":"x4uvnmpz0wa82perqb2vol",
+        "pickNum":"3",
+        "teamId":"3",
+        "playerId":"ebnp8ilt7u3se1lwoh3j5",
+        "mockdraftId":"100"
+},
+    "ldxdd7l9yy70i0ehlklrkvs":{
+    "id":"ldxdd7l9yy70i0ehlklrkvs",
+        "pickNum":"4",
+        "teamId":"4",
+        "playerId":"vv4m0xjq8hb41hjjjynid",
+        "mockdraftId":"100"
+},
+    "no9q1bhao4cga4ql0p0tyh":{
+    "id":"no9q1bhao4cga4ql0p0tyh",
+        "pickNum":"5",
+        "teamId":"5",
+        "playerId":"plhbuz9xa3kgh6s76ihub5",
+        "mockdraftId":"100"
+},
+    "o59v9onr0p0sglznmrfcfd":{
+    "id":"o59v9onr0p0sglznmrfcfd",
+        "pickNum":"6",
+        "teamId":"6",
+        "playerId":"psgoqq7xkiefsympa4mf9l",
+        "mockdraftId":"100"
+},
+    "xwpjfsbb54f11h5slspu7l":{
+    "id":"xwpjfsbb54f11h5slspu7l",
+        "pickNum":"7",
+        "teamId":"7",
+        "playerId":"qd09l94r7bqzytb14k90t",
+        "mockdraftId":"100"
+},
+    "1f8lprxspiki4klf63ptde4":{
+    "id":"1f8lprxspiki4klf63ptde4",
+        "pickNum":"8",
+        "teamId":"8",
+        "playerId":"7zgj6wmmec3g9wuws9mc5v",
+        "mockdraftId":"100"
+},
+    "22p85b0dqtd6k5pqxtf57e":{
+    "id":"22p85b0dqtd6k5pqxtf57e",
+        "pickNum":"9",
+        "teamId":"9",
+        "playerId":"eo983rvh69ld4jvqk2zok",
+        "mockdraftId":"100"
+},
+    "asorp2zz0g18pw3spwqf7":{
+    "id":"asorp2zz0g18pw3spwqf7",
+        "pickNum":"10",
+        "teamId":"10",
+        "playerId":"a6ng5w4110uttqkskvwjm",
+        "mockdraftId":"100"
+},
+    "8brm2u2s3ktrk7wmzom8oq":{
+    "id":"8brm2u2s3ktrk7wmzom8oq",
+        "pickNum":"11",
+        "teamId":"11",
+        "playerId":"zj7yykihktjwgmlac86n",
+        "mockdraftId":"100"
+},
+    "3p2hz4411nuwkmd8qr1ij":{
+    "id":"3p2hz4411nuwkmd8qr1ij",
+        "pickNum":"12",
+        "teamId":"12",
+        "playerId":"0ckbnnr0g44ofrwsqdl68bo",
+        "mockdraftId":"100"
+},
+    "nlhbh3imo4p6mv8wo9f9":{
+    "id":"nlhbh3imo4p6mv8wo9f9",
+        "pickNum":"13",
+        "teamId":"13",
+        "playerId":"33vr9cautugizfg0dv36jl",
+        "mockdraftId":"100"
+},
+    "1pdvm9jscl12biza2o0o4z":{
+    "id":"1pdvm9jscl12biza2o0o4z",
+        "pickNum":"14",
+        "teamId":"14",
+        "playerId":"w8cittxxks4bidrd4emhm",
+        "mockdraftId":"100"
+},
+    "gi6dgrgksuu4tt8eudtqio":{
+    "id":"gi6dgrgksuu4tt8eudtqio",
+        "pickNum":"15",
+        "teamId":"15",
+        "playerId":"ffqylt82qrvat3fcm7bl8t",
+        "mockdraftId":"100"
+},
+    "ke9us1f34vikkqez7nuk":{
+    "id":"ke9us1f34vikkqez7nuk",
+        "pickNum":"16",
+        "teamId":"16",
+        "playerId":"852rokphu0kne19ssewq2",
+        "mockdraftId":"100"
+},
+    "fhaii47wz4w4rxoh89khgb":{
+    "id":"fhaii47wz4w4rxoh89khgb",
+        "pickNum":"17",
+        "teamId":"17",
+        "playerId":"jva1kikhafuxzyz5cspw",
+        "mockdraftId":"100"
+},
+    "3z7e1mqn47au0si78a24lr":{
+    "id":"3z7e1mqn47au0si78a24lr",
+        "pickNum":"18",
+        "teamId":"18",
+        "playerId":"45f5keo8kudx7ta16nra27",
+        "mockdraftId":"100"
+},
+    "dgig93w7a5muov33lceaf":{
+    "id":"dgig93w7a5muov33lceaf",
+        "pickNum":"19",
+        "teamId":"19",
+        "playerId":"axdjb8fj4zeygzanippq",
+        "mockdraftId":"100"
+},
+    "jrnfggax02ju8btmc30sg":{
+    "id":"jrnfggax02ju8btmc30sg",
+        "pickNum":"20",
+        "teamId":"20",
+        "playerId":"ksx2sqbfvhhszq2z3n2umo",
+        "mockdraftId":"100"
+},
+    "c35phfsdtf50dc9zxqbmy":{
+    "id":"c35phfsdtf50dc9zxqbmy",
+        "pickNum":"21",
+        "teamId":"21",
+        "playerId":"tegrsqlhvnfrl0kkmyoqqk",
+        "mockdraftId":"100"
+},
+    "y31fqoqgumdwwjm41jt21r":{
+    "id":"y31fqoqgumdwwjm41jt21r",
+        "pickNum":"22",
+        "teamId":"22",
+        "playerId":"apcklv1hd97np3buozayk",
+        "mockdraftId":"100"
+},
+    "amxou5jvdi9xh3gt7bs2pc":{
+    "id":"amxou5jvdi9xh3gt7bs2pc",
+        "pickNum":"23",
+        "teamId":"23",
+        "playerId":"aim5no3wpovuqlwj0kne8d",
+        "mockdraftId":"100"
+},
+    "otulry51p5et2v4u3lwiz":{
+    "id":"otulry51p5et2v4u3lwiz",
+        "pickNum":"24",
+        "teamId":"24",
+        "playerId":"x1zxq9kdwtfj3xxupdaq4",
+        "mockdraftId":"100"
+},
+    "wji6xkldxvnfkuna5l33ib":{
+    "id":"wji6xkldxvnfkuna5l33ib",
+        "pickNum":"25",
+        "teamId":"25",
+        "playerId":"coaurivhdbe8vvu0suajgb",
+        "mockdraftId":"100"
+},
+    "e31l0rx0u0lzsl3sy1aben":{
+    "id":"e31l0rx0u0lzsl3sy1aben",
+        "pickNum":"26",
+        "teamId":"26",
+        "playerId":"zwou50kol6ga7z8dhmpng4",
+        "mockdraftId":"100"
+},
+    "t47wz8aqphfzctr5a8pabt":{
+    "id":"t47wz8aqphfzctr5a8pabt",
+        "pickNum":"27",
+        "teamId":"27",
+        "playerId":"f3b370ydcatvz5n4hz0mb",
+        "mockdraftId":"100"
+},
+    "jbtp13qpzkc2z90vo5zx8s":{
+    "id":"jbtp13qpzkc2z90vo5zx8s",
+        "pickNum":"28",
+        "teamId":"28",
+        "playerId":"4tfudnc1uhohokz5vvkfac",
+        "mockdraftId":"100"
+},
+    "f966d88m1wim1jswczim9":{
+    "id":"f966d88m1wim1jswczim9",
+        "pickNum":"29",
+        "teamId":"29",
+        "playerId":"msi1wjyxwkkajk952zl09n",
+        "mockdraftId":"100"
+},
+    "esms0mbqvagz70s8dxlc3h":{
+    "id":"esms0mbqvagz70s8dxlc3h",
+        "pickNum":"30",
+        "teamId":"30",
+        "playerId":"u3e06cztf7oqy2hsymi3y",
+        "mockdraftId":"100"
+},
+    "pvi3z26eed0yggtssqcok":{
+    "id":"pvi3z26eed0yggtssqcok",
+        "pickNum":"31",
+        "teamId":"31",
+        "playerId":"hze7lnjqsr4istarshyngd",
+        "mockdraftId":"100"
+},
+    "dfrcgf2aflj91jt608tbwo":{
+    "id":"dfrcgf2aflj91jt608tbwo",
+        "pickNum":"32",
+        "teamId":"32",
+        "playerId":"0nuy13vdm9eb405zsvxqc",
+        "mockdraftId":"100"
+}
+}

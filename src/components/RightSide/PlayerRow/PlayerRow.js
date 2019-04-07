@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { editPickPlayer, editPickTeam } from "../../../actions/picks";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './playerrow.css'
 
 
@@ -18,25 +19,31 @@ class PlayerRow extends Component {
 
     render() {
 
-        const { result, type } = this.props;
+        const { result, type, orderNum } = this.props;
 
         return (
             <div>
-                <div className="d-flex p-3 col-12 ">
+                <div className="d-flex p-3 flex-row">
                     {type === 'playerSearch' &&
-                        <span>
-                            { result.name }, { result.position }, { result.school }, { result.conference }, { result.ofdOrDef }
-                            <button className="add-btn pt-0 pb-0 pr-2 pl-2 ml-3" onClick={this.selectPlayerForPick}>
-                                Select Player +
+                        <span className="d-flex flex-row player-row">
+                            <span className="player-row-num">{ orderNum }.</span>
+                            <span className="player-row-name">{ result.name }</span>
+                            <span className="player-row-position">{ result.position }</span>
+                            <span className="player-row-school">{ result.school }</span>
+                            <span className="player-row-conference">{ result.conference }</span>
+                            <span className="player-row-offOrDef">{ result.offOrDef }</span>
+                            <button className="add-btn pt-1 pb-1 pr-2 pl-2 ml-3" onClick={this.selectPlayerForPick}>
+                                <FontAwesomeIcon icon="plus" />
                             </button>
                         </span>
                     }
 
                     {type === 'teamSearch' &&
-                        <span>
-                            { result.name }
-                            <button className="add-btn pt-0 pb-0 pr-2 pl-2 ml-3" onClick={this.selectTeamForPick}>
-                                Select Team +
+                    <span className="d-flex flex-row player-row">
+                            <span className="player-row-num">{ orderNum }.</span>
+                            <span className="team-row-name">{ result.name }</span>
+                            <button className="add-btn pt-1 pb-1 pr-2 pl-2 ml-3" onClick={this.selectTeamForPick}>
+                                <FontAwesomeIcon icon="plus" />
                             </button>
                         </span>
                     }

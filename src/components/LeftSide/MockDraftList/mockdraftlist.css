@@ -1,4 +1,12 @@
 
+.mockdraft-container {
+    min-height: 100px;
+    flex-grow: 10;
+    margin: 10px 15px;
+    overflow-y: scroll;
+}
+
 .mockdraftlist {
     list-style-type: none;
+    padding-left: 0;
 }

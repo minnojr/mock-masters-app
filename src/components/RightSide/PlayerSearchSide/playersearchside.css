@@ -1,3 +1,21 @@
+.search-cont {
+    margin: 10px 15px;
+}
+
+.searchBtns {
+    border: 0.5px solid lightgrey;
+}
+
+.nav-right {
+    background-color: #238BFB;
+    padding: 10px 20px;
+    max-height: 40px;
+    flex-grow: 2;
+    color: white;
+    text-align: right;
+    margin-bottom: 25px;
+}
+
 button.add-btn {
     background-color: #FEE3E3;
 }
@@ -7,15 +25,19 @@ button.searchToggle:focus {
 }
 
 button.searchToggle {
-    border: none;
     padding: 10px;
-
 }
 
-.notShowing {
+.searchBtns .notShowing {
     border-bottom: 3px solid transparent !important;
+    border-top: 0.5px solid lightgrey;
+    border-left: 0.5px solid lightgrey;
+    border-right: 0.5px solid lightgrey;
 }
 
-.showing {
+.searchBtns .showing {
     border-bottom: 3px solid #238BFB !important;
+    border-top: 0.5px solid transparent !important;
+    border-left: 0.5px solid lightgrey !important;
+    border-right: 0.5px solid lightgrey !important;
 }

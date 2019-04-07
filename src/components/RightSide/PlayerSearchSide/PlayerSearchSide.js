@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
+import './playersearchside.css'
+
 import PlayerSearchList from '../PlayerSearchList/PlayerSearchList';
 import SearchBar from '../SearchBar/SearchBar'
 import PickRow from '../../LeftSide/PickRow/PickRow';
+import Nav from '../../Nav/Nav'
 
 
 class PlayerSearchSide extends Component {
@@ -66,19 +69,46 @@ class PlayerSearchSide extends Component {
         const teamSearchClass = this.state.showing === "teamSearch" ? 'showing' : 'notShowing';
 
         return (
-            <div className="d-flex flex-column col-12 pl-0 pr-0">
-                <h3 className="text-center mb-4">EDIT PICK</h3>
+            <div className="app-side right-side">
+
+                <div className="nav-right">
+                    SIGN OUT
+                </div>
+
+                {/*<h3 className="text-center mb-4">EDIT PICK</h3>*/}
                 <PickRow pick={focusPick} focusPick={true} />
+                {/*<hr />*/}
 
-                <button className={`searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Edit Player</button>
-                <button className={`searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Edit Team</button>
+                <div className="searchBtns d-flex mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
+                    <button className={`searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Edit Team</button>
+                    <button className={`searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Edit Player</button>
+                </div>
 
-                <hr />
+                {/*<hr />*/}
 
-                <SearchBar query={this.state.searchQuery} updateQuery={(searchQuery) => {
+                <SearchBar type={this.state.showing} query={this.state.searchQuery} updateQuery={(searchQuery) => {
                     this.updateQuery(searchQuery)
                 }}/>
-                <PlayerSearchList searchResults={filteredSearchResults} type={ this.state.showing } searchQuery={this.state.searchQuery}/>
+                { this.state.showing === "playerSearch" &&
+                    <span className="d-flex flex-row player-row-header">
+                        <span className="player-row-num">#</span>
+                        <span className="player-row-name">PLAYER</span>
+                        <span className="player-row-position">POS</span>
+                        <span className="player-row-school">SCHOOL</span>
+                        <span className="player-row-conference">CONF</span>
+                        <span className="player-row-offOrDef">O/D</span>
+                    </span>
+                }
+
+                {this.state.showing === "teamSearch" &&
+                    <span className="d-flex flex-row player-row-header pl-3">
+                        <span className="player-row-num pl-3">#</span>
+                        <span className="team-row-name">TEAM</span>
+                    </span>
+                }
+                <div className="search-container">
+                    <PlayerSearchList searchResults={filteredSearchResults} type={ this.state.showing } searchQuery={this.state.searchQuery}/>
+                </div>
             </div>
         )
     }

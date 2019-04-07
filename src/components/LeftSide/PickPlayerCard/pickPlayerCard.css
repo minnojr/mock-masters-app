@@ -1,12 +1,15 @@
 
-
 .editablePick:hover {
-     background-color: #238BFB;
-     color: white;
+     background-color: #DEEEFF;
+     color: black;
      cursor: pointer;
-    /*-webkit-transition: 0.1s; !* Safari *!*/
-    /*transition: 0.1s;*/
  }
+
+.editablePick span:hover {
+    background-color: #DEEEFF;
+    /*color: white;*/
+    cursor: pointer;
+}
 
 .editablePick:focus {
     cursor: pointer;
@@ -14,24 +17,74 @@
 
 .editablePick:hover span.info {
     display: none;
-    /*-webkit-transition: 2s; !* Safari *!*/
-    /*transition: 2s;*/
 }
 
 .editPickLabel{
     display: none;
+}
 
+.editablePick .info-2 {
+    display: flex;
+    cursor: default;
+    min-height: 10px;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .editablePick:hover span.editPickLabel{
     display: contents;
 }
 
+.hover-player-name {
+    width: 50%;
+    text-align: left;
+    padding-left: 1.5em;
+}
+
+.hover-edit-pick {
+    width: 50%;
+    text-align: center;
+    font-size: 25px;
+}
+
 .focusPick {
     cursor: not-allowed;
 }
 
+.md-card {
+    display: flex;
+
+}
+
 .md-card .info {
+    display: flex;
     cursor: default;
+    min-height: 10px;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.md-card .info span {
+    min-height: 1px;
+}
+
+.player-name {
+    flex-grow: 2;
+    text-align: left;
+    min-width: 45%;
+    max-width: 45%;
+    padding-left: 1.5em;
+}
+
+.player-info {
+    flex-grow: 1;
+    font-size: 12px;
+}
+
+.br5 {
+    border-radius: 0.50rem !important;
+    border: 0.5px solid #979797 !important;
 }
 

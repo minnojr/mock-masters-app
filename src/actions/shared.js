@@ -9,7 +9,7 @@ import { setFocusPick } from "./focusPick";
 
 import { showLoading, hideLoading } from "react-redux-loading";
 
-const AUTHED_ID = "q34tdyah3";
+const AUTHED_ID = "l8k743rlczshp3dqe1bh";
 
 export function handleInitialData () {
     console.log("*** ---> handleInitalData()...");
