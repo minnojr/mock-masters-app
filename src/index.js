@@ -7,13 +7,23 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { createStore } from "redux";
+import { createStore, compose } from "redux";
 import { Provider } from 'react-redux';
+import { reduxFirestore } from "redux-firestore";
+import { reactReduxFirebase } from "react-redux-firebase";
+import fbCongif from './config/fbConfig'
+
 
 import reducers from './reducers';
 import middleware from './middleware';
 
-const store = createStore(reducers, middleware);
+const store = createStore(reducers,
+        compose(
+            middleware,
+            reduxFirestore(fbCongif),
+            reactReduxFirebase(fbCongif)
+        ),
+    );
 
 ReactDOM.render(
     <Provider store={store}>

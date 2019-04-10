@@ -2,75 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e3565de-1b91-43b7-ab15-d790233f04d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/atl-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/az-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/bal-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/buf-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/car-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/chi-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/cin-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/cle-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/dal-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/den-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/det-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/gb-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/hou-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/ind-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/jax-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/kc-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/lac-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/lar-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/md-single2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/mia-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/min-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/ne-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/no-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/nyg-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/nyj-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/oak-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/phi-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/pit-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/sea-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/sf-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/tb-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/ten-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/teams/wash-team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RightSide/SearchBar/searchbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SignIn/SignInCode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/mockdraft-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/picks-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/player-prospect-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/team-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/user-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Admin/Admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Admin/EditMock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/fbConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/mockdrafts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/mockdrafts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/picks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/picks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/players.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/players.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/shared.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/shared.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/teams.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/teams.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LeftSide/MockDraftList/MockDraftList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeftSide/MockDraftList/MockDraftList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LeftSide/MockDraftList/mockdraftlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeftSide/MockDraftList/mockdraftlist.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/MockDraftSide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/MockDraftSide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/mockdraftside.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/mockdraftside.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/PickPlayerCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/PickPlayerCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/pickPlayerCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/pickPlayerCard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LeftSide/PickRow/PickRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeftSide/PickRow/PickRow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LeftSide/PickTeamCard/PickTeamCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeftSide/PickTeamCard/PickTeamCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LeftSide/PickTeamCard/pickteamcard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeftSide/PickTeamCard/pickteamcard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Nav/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Nav/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RightSide/PlayerRow/PlayerRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightSide/PlayerRow/PlayerRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RightSide/PlayerRow/playerrow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightSide/PlayerRow/playerrow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/PlayerSearchList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/PlayerSearchList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/playersearchlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/playersearchlist.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide/PlayerSearchSide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide/PlayerSearchSide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide/playersearchside.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide/playersearchside.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RightSide/SearchBar/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RightSide/SearchBar/SearchBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/_DATA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/_DATA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/mockdrafts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/mockdrafts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/players.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/players.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/player-prospect-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/player-prospect-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/team-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/team-data.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -82,12 +39,78 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Dashboard/Dashboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="421">
+              <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/shared.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="65" column="73" selection-start-line="65" selection-start-column="73" selection-end-line="65" selection-end-column="73" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide/PlayerSearchSide.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/MockDraftSide.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/team-data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3360">
+              <caret line="224" column="6" selection-start-line="224" selection-start-column="6" selection-end-line="224" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/utils/player-prospect-data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/PlayerSearchList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="55" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="55" />
+            <state relative-caret-position="225">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="47" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -98,8 +121,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickRow/PickRow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
+            <state relative-caret-position="375">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -108,22 +131,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/PickPlayerCard.js">
+        <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerRow/PlayerRow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/MockDraftSide.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+            <state relative-caret-position="238">
+              <caret line="16" column="40" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="40" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -132,58 +143,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/mockdraftside.css">
+        <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickTeamCard/PickTeamCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/pickPlayerCard.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/playersearchlist.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/RightSide/SearchBar/SearchBar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerRow/playerrow.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-498">
-              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide/PlayerSearchSide.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="81" column="54" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
+            <state relative-caret-position="405">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="31" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -197,24 +160,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PlayerSearchSide</find>
-      <find>q34tdyah3</find>
-      <find>focusPick</find>
-      <find>right-dashboard</find>
-      <find>modules:</find>
-      <find>loaders</find>
-      <find>loaders:</find>
-      <find>loader</find>
-      <find>loader:</find>
-      <find>balt</find>
-      <find>border-bottom</find>
       <find>info</find>
       <find>font-a</find>
       <find>md-card</find>
@@ -225,7 +177,30 @@
       <find>.showing {</find>
       <find>border-right-grey</find>
       <find>player-row-header</find>
+      <find>conso</find>
+      <find>compos</find>
+      <find>name</find>
+      <find>chi</find>
+      <find>raiders</find>
+      <find>raider</find>
+      <find>giants</find>
+      <find>oakland</find>
+      <find>packers</find>
+      <find>redskins</find>
+      <find>49</find>
+      <find>red</find>
+      <find>&quot;id&quot;:</find>
+      <find>jets</find>
+      <find>props</find>
+      <find>handleGenerateNewMockAndPicks</find>
+      <find>addPicksToMock</find>
+      <find>handleAddPicksToMock</find>
+      <find>allTeams</find>
+      <find>PickId!</find>
     </findStrings>
+    <replaceStrings>
+      <replace>&quot;order&quot;:</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/actions</dir>
     </dirStrings>
@@ -236,46 +211,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/MockDraftSide/MockDraftSide.js" />
-        <option value="$PROJECT_DIR$/src/components/PickRow/PickRow.js" />
-        <option value="$PROJECT_DIR$/src/components/PickPlayerCard/PickPlayerCard.js" />
-        <option value="$PROJECT_DIR$/src/components/PickTeamCard/PickTeamCard.js" />
-        <option value="$PROJECT_DIR$/src/components/MockDraftList/MockDraftList.js" />
-        <option value="$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide.ts" />
-        <option value="$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide.js" />
-        <option value="$PROJECT_DIR$/src/actions/focusPick.js" />
         <option value="$PROJECT_DIR$/src/reducers/focusPick.js" />
-        <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/actions/teams.js" />
-        <option value="$PROJECT_DIR$/src/actions/picks.js" />
         <option value="$PROJECT_DIR$/src/reducers/picks.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/components/RightSide/TeamRow/TeamRow.js" />
         <option value="$PROJECT_DIR$/src/components/SignIn/SignInCode.js" />
         <option value="$PROJECT_DIR$/src/utils/picks-data.js" />
-        <option value="$PROJECT_DIR$/src/utils/player-prospect-data.js" />
         <option value="$PROJECT_DIR$/src/utils/user-data.js" />
         <option value="$PROJECT_DIR$/src/utils/_DATA.js" />
-        <option value="$PROJECT_DIR$/src/actions/shared.js" />
         <option value="$PROJECT_DIR$/src/utils/mockdraft-data.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/LeftSide/MockDraftList/MockDraftList.js" />
         <option value="$PROJECT_DIR$/src/components/Nav/Nav.js" />
-        <option value="$PROJECT_DIR$/src/components/Dashboard/Dashboard.js" />
         <option value="$PROJECT_DIR$/src/components/App/App.css" />
         <option value="$PROJECT_DIR$/src/components/Dashboard/dashboard.css" />
         <option value="$PROJECT_DIR$/src/components/LeftSide/MockDraftList/mockdraftlist.css" />
         <option value="$PROJECT_DIR$/src/components/RightSide/SearchBar/searchbar.css" />
         <option value="$PROJECT_DIR$/node_modules/react-scripts/config/webpack.config.js" />
-        <option value="$PROJECT_DIR$/src/utils/team-data.js" />
         <option value="$PROJECT_DIR$/src/components/LeftSide/PickRow/pickrow.css" />
-        <option value="$PROJECT_DIR$/src/components/LeftSide/PickRow/PickRow.js" />
-        <option value="$PROJECT_DIR$/src/components/LeftSide/PickTeamCard/PickTeamCard.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/components/LeftSide/PickTeamCard/pickteamcard.css" />
-        <option value="$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/PlayerSearchList.js" />
-        <option value="$PROJECT_DIR$/src/components/App/App.js" />
         <option value="$PROJECT_DIR$/src/components/RightSide/PlayerRow/playerrow.css" />
         <option value="$PROJECT_DIR$/src/components/RightSide/PlayerRow/PlayerRow.js" />
         <option value="$PROJECT_DIR$/src/components/Nav/nav.css" />
@@ -283,17 +237,44 @@
         <option value="$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/pickPlayerCard.css" />
         <option value="$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/playersearchlist.css" />
         <option value="$PROJECT_DIR$/src/components/RightSide/SearchBar/SearchBar.js" />
-        <option value="$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide/PlayerSearchSide.js" />
-        <option value="$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/PickPlayerCard.js" />
         <option value="$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/mockdraftside.css" />
+        <option value="$PROJECT_DIR$/src/components/App/App.js" />
+        <option value="$PROJECT_DIR$/src/middleware/index.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/config/fbConfig.js" />
+        <option value="$PROJECT_DIR$/src/reducers/players.js" />
+        <option value="$PROJECT_DIR$/src/reducers/index.js" />
+        <option value="$PROJECT_DIR$/src/utils/team-data.js" />
+        <option value="$PROJECT_DIR$/src/actions/teams.js" />
+        <option value="$PROJECT_DIR$/src/components/Admin/EditMock.js" />
+        <option value="$PROJECT_DIR$/src/actions/players.js" />
+        <option value="$PROJECT_DIR$/src/components/Admin/Admin.js" />
+        <option value="$PROJECT_DIR$/src/reducers/mockdrafts.js" />
+        <option value="$PROJECT_DIR$/src/utils/player-prospect-data.js" />
+        <option value="$PROJECT_DIR$/src/components/Dashboard/Dashboard.js" />
+        <option value="$PROJECT_DIR$/src/actions/mockdrafts.js" />
+        <option value="$PROJECT_DIR$/src/components/LeftSide/MockDraftList/MockDraftList.js" />
+        <option value="$PROJECT_DIR$/src/components/LeftSide/PickTeamCard/PickTeamCard.js" />
+        <option value="$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/PickPlayerCard.js" />
+        <option value="$PROJECT_DIR$/src/actions/picks.js" />
+        <option value="$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/PlayerSearchList.js" />
+        <option value="$PROJECT_DIR$/src/actions/shared.js" />
+        <option value="$PROJECT_DIR$/src/components/LeftSide/PickRow/PickRow.js" />
+        <option value="$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide/PlayerSearchSide.js" />
         <option value="$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/MockDraftSide.js" />
       </list>
     </option>
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1110" />
-    <option name="height" value="987" />
+    <option name="width" value="1680" />
+    <option name="height" value="986" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -304,105 +285,67 @@
         <subPane>
           <expand>
             <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
+              <item name="mock-masters-app copy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mock-masters-app copy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
+              <item name="mock-masters-app copy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mock-masters-app copy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
+              <item name="mock-masters-app copy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mock-masters-app copy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
+              <item name="mock-masters-app copy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mock-masters-app copy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="LeftSide" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
+              <item name="mock-masters-app copy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mock-masters-app copy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="LeftSide" type="462c0819:PsiDirectoryNode" />
               <item name="MockDraftSide" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
+              <item name="mock-masters-app copy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mock-masters-app copy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="LeftSide" type="462c0819:PsiDirectoryNode" />
-              <item name="PickPlayerCard" type="462c0819:PsiDirectoryNode" />
+              <item name="PickTeamCard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="LeftSide" type="462c0819:PsiDirectoryNode" />
-              <item name="PickRow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
+              <item name="mock-masters-app copy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mock-masters-app copy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="RightSide" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
+              <item name="mock-masters-app copy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mock-masters-app copy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="RightSide" type="462c0819:PsiDirectoryNode" />
               <item name="PlayerRow" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
+              <item name="mock-masters-app copy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mock-masters-app copy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="RightSide" type="462c0819:PsiDirectoryNode" />
-              <item name="PlayerSearchList" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="RightSide" type="462c0819:PsiDirectoryNode" />
-              <item name="PlayerSearchSide" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="RightSide" type="462c0819:PsiDirectoryNode" />
-              <item name="SearchBar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mock-masters-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mock-masters-app" type="462c0819:PsiDirectoryNode" />
+              <item name="mock-masters-app copy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mock-masters-app copy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -422,6 +365,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -460,18 +404,18 @@
       <option name="presentableId" value="Default" />
       <updated>1554241040195</updated>
       <workItem from="1554241041888" duration="36031000" />
-      <workItem from="1554504269078" duration="32215000" />
+      <workItem from="1554504269078" duration="32900000" />
+      <workItem from="1554668688005" duration="39455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68246000" />
+    <option name="totallyTimeSpent" value="108386000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1110" height="987" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1680" height="986" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2295684" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1506932" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -486,7 +430,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32924107" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33072627" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26957494" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -496,139 +440,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/actions/teams.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/picks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/picks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="63" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RightSide/TeamRow/TeamRow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/authedUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SignIn/SignInCode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1101">
-          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/user-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/mockdraft-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/picks-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/shared.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Nav/Nav.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="10" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Dashboard/Dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Dashboard/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/img/teams/az-team.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/img/teams/gb-team.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/img/teams/kc-team.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/img/teams/ne-team.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -657,20 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/team-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="110" column="6" lean-forward="true" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/player-prospect-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/LeftSide/MockDraftList/mockdraftlist.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -678,23 +475,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/MockDraftList/MockDraftList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickRow/pickrow.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickRow/pickrow.css" />
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -716,36 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickTeamCard/PickTeamCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="36" column="45" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerRow/PlayerRow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="44" column="112" selection-start-line="44" selection-start-column="112" selection-end-line="44" selection-end-column="112" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Nav/nav.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -760,54 +511,260 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/_DATA.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/PlayerSearchList.js">
+    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/mockdraftside.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" column="55" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickRow/PickRow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/pickPlayerCard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="615">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/playersearchlist.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="390">
           <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerRow/playerrow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/user-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/RightSide/SearchBar/SearchBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/fbConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/middleware/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/teams.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/mockdraft-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/picks-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="2" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="14" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/_DATA.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Admin/Admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Admin/EditMock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/players.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/mockdrafts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/mockdrafts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/teams.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/players.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/PickPlayerCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/MockDraftList/MockDraftList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/picks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/picks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="89" column="20" lean-forward="true" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickTeamCard/PickTeamCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerRow/PlayerRow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/shared.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="65" column="73" selection-start-line="65" selection-start-column="73" selection-end-line="65" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickRow/PickRow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerSearchList/PlayerSearchList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="47" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -816,45 +773,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerSearchSide/PlayerSearchSide.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="81" column="54" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
+        <state relative-caret-position="183">
+          <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RightSide/PlayerRow/playerrow.css">
+    <entry file="file://$PROJECT_DIR$/src/components/Dashboard/Dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-498">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/PickPlayerCard/PickPlayerCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+        <state relative-caret-position="421">
+          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/mockdraftside.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/LeftSide/MockDraftSide/MockDraftSide.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+        <state relative-caret-position="212">
+          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/team-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3360">
+          <caret line="224" column="6" selection-start-line="224" selection-start-column="6" selection-end-line="224" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/player-prospect-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
         </state>
       </provider>
     </entry>

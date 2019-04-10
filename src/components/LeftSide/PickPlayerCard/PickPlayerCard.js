@@ -4,8 +4,13 @@ import './pickPlayerCard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { setFocusPick } from "../../../actions/focusPick";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 class PickPlayerCard extends Component {
+    componentDidMount() {
+
+    }
 
     handleEditClick = () => {
       this.props.dispatch(setFocusPick(this.props.pickId))
@@ -13,7 +18,7 @@ class PickPlayerCard extends Component {
 
     render() {
 
-        const { player, focusPick } = this.props;
+        const { focusPick, player } = this.props;
 
         let editablePick = focusPick ? "" : "editablePick";
 
@@ -21,10 +26,10 @@ class PickPlayerCard extends Component {
             <div className={`d-flex card p-3 col-8 md-card br5 ${editablePick}`} onClick={this.handleEditClick}>
                 <span className="info">
                     <span className="player-name">{ player.name }</span>
-                    <span className="player-info">{ player.position.toUpperCase() }</span>
-                    <span className="player-info">{ player.school.toUpperCase() }</span>
-                    <span className="player-info">{ player.conference.toUpperCase() }</span>
-                    <span className="player-info">{ player.offOrDef.toUpperCase() }</span>
+                    <span className="player-info">{ player.position }</span>
+                    <span className="player-info">{ player.school }</span>
+                    <span className="player-info">{ player.conference }</span>
+                    <span className="player-info">{ player.offOrDef }</span>
                 </span>
                 <span className="editPickLabel">
                     <span className="info-2">
@@ -37,9 +42,13 @@ class PickPlayerCard extends Component {
     }
 }
 
-function mapStateToProps({ players }, { playerId }) {
+function mapStateToProps({ picks, players }, { pickId }) {
+    const pick = picks[pickId];
+    const player = players[pick.playerId];
+    const emptyObj = {};
+
     return {
-        player: players[playerId] ? players[playerId] : ""
+        player: player ? player : emptyObj
     }
 }
 

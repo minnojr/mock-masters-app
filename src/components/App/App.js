@@ -12,8 +12,7 @@ import './App.css'
 import { handleInitialData } from "../../actions/shared";
 
 import Dashboard from '../Dashboard/Dashboard'
-import Nav from "../Nav/Nav";
-import SignInCode from '../SignIn/SignInCode'
+import Admin from '../Admin/Admin'
 
 class App extends Component {
     componentDidMount() {
@@ -36,7 +35,10 @@ class App extends Component {
                             { this.props.loading === true
                                 ? <span>Loading...</span>
                                 :
-                                <Route path='/' exact component={ Dashboard } />
+                                <span>
+                                    <Route path='/' exact component={ Dashboard } />
+                                    <Route path='/mm-only/admin' exact component={ Admin } />
+                                </span>
                             }
                     </div>
                 </Fragment>

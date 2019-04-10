@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 import './playersearchside.css'
 
@@ -12,7 +14,7 @@ import Nav from '../../Nav/Nav'
 class PlayerSearchSide extends Component {
 
     state = {
-        searchQuery: '',
+        searchQuery: ' ',
         searchResults: [],
         showing: "playerSearch"
     };
@@ -47,26 +49,43 @@ class PlayerSearchSide extends Component {
             )
         }
 
-        let allPlayers = [];
+        // console.log(players);
+        let playersArr = [];
         for(let player in players) {
-            allPlayers = [...allPlayers, players[player]];
+            players[player].id = player;
+            // console.log(players[player]);
+            playersArr = [...playersArr, players[player]];
         }
+
+
+        // console.log(playersArr);
+        let allPlayers = playersArr.filter((p) => {
+            console.log(p);
+            return p.name !== undefined;
+        }).sort((a, b) => a.rank -  b.rank);
+
 
         let allTeams = [];
         for(let team in teams) {
+            teams[team].id = team;
             allTeams = [...allTeams, teams[team]];
         }
 
-        let filteredSearchResults = this.state.showing === "playerSearch"
-            ? allPlayers.filter((player) => {
+        let filteredSearchResults = [];
+        if(this.state.showing === "playerSearch") {
+            filteredSearchResults = allPlayers.filter((player) => {
                 return player.name.trim().toLowerCase().includes(this.state.searchQuery.trim().toLowerCase())
             })
-            : allTeams.filter((team) => {
+        }  else {
+            filteredSearchResults = allTeams.filter((team) => {
+                console.log(team);
                 return team.name.trim().toLowerCase().includes(this.state.searchQuery.trim().toLowerCase())
             });
+        }
 
         const playerSearchClass = this.state.showing === "playerSearch" ? 'showing' : 'notShowing';
         const teamSearchClass = this.state.showing === "teamSearch" ? 'showing' : 'notShowing';
+
 
         return (
             <div className="app-side right-side">
@@ -75,16 +94,13 @@ class PlayerSearchSide extends Component {
                     SIGN OUT
                 </div>
 
-                {/*<h3 className="text-center mb-4">EDIT PICK</h3>*/}
-                <PickRow pick={focusPick} focusPick={true} />
-                {/*<hr />*/}
+                <PickRow pickId={focusPick} focusPick={true} />
 
                 <div className="searchBtns d-flex mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
                     <button className={`searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Edit Team</button>
                     <button className={`searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Edit Player</button>
                 </div>
 
-                {/*<hr />*/}
 
                 <SearchBar type={this.state.showing} query={this.state.searchQuery} updateQuery={(searchQuery) => {
                     this.updateQuery(searchQuery)
@@ -114,15 +130,22 @@ class PlayerSearchSide extends Component {
     }
 }
 
-function mapStateToProps({  players, focusPick, picks, teams }) {
+function mapStateToProps({ focusPick, picks, teams, players, firestore }) {
 
-    const focusPickToEdit = picks[focusPick];
+    // const focusPickToEdit = picks[focusPick];
+    const emptyStr= "";
 
     return {
-        players: players ? players : "",
-        focusPick: focusPickToEdit,
-        teams: teams ? teams : ""
+        // players: firestore.ordered.players,
+        players,
+        focusPick,
+        teams: teams ? teams : emptyStr
     }
 }
 
-export default connect(mapStateToProps)(PlayerSearchSide);
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        { collection: 'players' }
+    ])
+)(PlayerSearchSide);

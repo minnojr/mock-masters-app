@@ -7,9 +7,10 @@ import PickTeamCard from '../PickTeamCard/PickTeamCard'
 class PickRow extends Component {
 
     render() {
-        const { pick, focusPick } = this.props;
+        const { pickId, focusPick } = this.props;
 
-        if(!pick) {
+
+        if(!pickId) {
             return (
                 <div>This Pick Row doesn't exits...</div>
             )
@@ -18,7 +19,7 @@ class PickRow extends Component {
         let isFocusPick = false;
         let focusClass = "";
 
-        if(focusPick === pick.id) {
+        if(focusPick === pickId) {
             isFocusPick = true;
             focusClass = "md-focus";
         }
@@ -26,8 +27,8 @@ class PickRow extends Component {
         return (
             <div>
                 <div className={`d-flex flex-row col-12 mb-2 ${focusClass}`}>
-                    <PickTeamCard teamId={pick.teamId} pickId={pick.id} pickNum={pick.pickNum} focusPick={isFocusPick}/>
-                    <PickPlayerCard playerId={pick.playerId} pickId={pick.id} focusPick={isFocusPick}/>
+                    <PickTeamCard pickId={pickId} focusPick={isFocusPick}/>
+                    <PickPlayerCard pickId={pickId} focusPick={isFocusPick}/>
                 </div>
             </div>
         )

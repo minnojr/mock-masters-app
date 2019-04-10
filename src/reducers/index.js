@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import { loadingBarReducer } from "react-redux-loading";
+import { firestoreReducer } from 'redux-firestore';
 
 import users from './users'
 import mockdrafts from './mockdrafts'
@@ -18,5 +19,6 @@ export default combineReducers({
     picks,
     players,
     teams,
+    firestore: firestoreReducer,
     loadingBar: loadingBarReducer,
 });
