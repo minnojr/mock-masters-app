@@ -9,7 +9,7 @@ class PickTeamCard extends PureComponent {
         const { team, pickNum } = this.props;
 
         return (
-            <div className="d-flex card p-3 col-4 mr-2 md-card br5">
+            <div className="d-flex card col-4 mr-2 md-card br5">
                 <span className="info team-card">
                     <span className="pick-num mr-4">{pickNum}</span>
                     <span>

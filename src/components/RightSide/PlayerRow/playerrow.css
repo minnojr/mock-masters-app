@@ -2,7 +2,7 @@ button.add-btn {
     background-color: #FEE3E3;
     border-radius: 3px;
     border: 0.5px solid #979797;
-    width: 8%;
+    width: 15% !important;
     max-height: 40px;
     font-size: 12px !important;
 }
@@ -29,7 +29,7 @@ button.searchToggle {
 
 .showing {
     /*border-bottom: 3px solid #238BFB !important;*/
-    border: 0.5px solid lightgrey !important;
+    /*border: 0.5px solid lightgrey !important;*/
 }
 
 .right-side button {
@@ -38,6 +38,23 @@ button.searchToggle {
 
 .border-right-grey {
     border: 0.5px solid lightgrey !important;
+}
+
+.team-row-name {
+    min-width: 71%;
+    max-width: 71%;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/*.team-row-name {*/
+    /*max-width: 50%;*/
+    /*min-width: 50%;*/
+/*}*/
+
+.team-row-num {
+    width: 14% !important;
+    text-align: left;
 }
 
 .player-row {
@@ -49,27 +66,27 @@ button.searchToggle {
 .player-row-num {
     text-align: left;
     /*flex-grow: 2;*/
-    max-width: 12%;
-    min-width: 12%;
+    max-width: 14%;
+    min-width: 14%;
 }
 
 .player-row-name {
-    max-width: 24%;
-    min-width: 24%;
+    max-width: 35%;
+    min-width: 35%;
     text-align: left;
     /*flex-grow: 3;*/
 }
 
 .player-row-position {
-    max-width: 10%;
-    min-width: 10%;
+    max-width: 11%;
+    min-width: 11%;
     text-align: center;
     /*flex-grow: 1;*/
 }
 
 .player-row-school {
-    max-width: 20%;
-    min-width: 20%;
+    max-width: 25%;
+    min-width: 25%;
     /*flex-grow: 3;*/
 }
 
@@ -85,7 +102,55 @@ button.searchToggle {
     /*flex-grow: 1;*/
 }
 
-.team-row-name {
-    max-width: 50%;
-    min-width: 50%;
+.search-container .search-row {
+    padding: 1em;
+}
+
+/****** RESPONSIVE START *******/
+
+@media only screen and (max-width : 900px) {
+
+    .search-container {
+        margin: 0;
+        overflow-y: visible;
+    }
+
+    .search-container .search-row {
+        padding: 2px;
+    }
+
+    .player-row-header {
+        margin: 10px 0 0 0 !important;
+    }
+
+    .player-row .player-row-name {
+        font-size: 12px;
+    }
+
+    .player-row {
+        font-size: 10px;
+        padding: 5px 0;
+    }
+
+    button.add-btn {
+        width: 15%;
+        max-height: 40px;
+        font-size: 10px !important;
+    }
+
+    button.add-btn:hover {
+        background-color: #FEE3E3;
+    }
+
+    button.add-btn:active {
+        background-color: white;
+    }
+
+    .team-row-name {
+        min-width: 71%;
+        max-width: 71%;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
 }

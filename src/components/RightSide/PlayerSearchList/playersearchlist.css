@@ -76,3 +76,12 @@
     max-width: 50%;
     min-width: 50%;
 }
+
+/****** RESPONSIVE START *******/
+
+@media only screen and (max-width : 900px) {
+    .player-row-header {
+        text-align: left;
+        padding: 0.5em 0.7em;
+    }
+}

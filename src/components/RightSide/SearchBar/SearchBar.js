@@ -12,7 +12,7 @@ class SearchBar extends Component {
                             className="searchbar"
                             type='text'
                             name='player'
-                            placeholder={`SEARCH...`}
+                            // placeholder="Search..."
                             value={this.props.query}
                             onChange={(event) => this.props.updateQuery(event.target.value)}
                         />

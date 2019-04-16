@@ -54,6 +54,7 @@
 
 .md-card {
     display: flex;
+    padding: 0.5em !important;
 }
 
 .md-card .info {
@@ -90,6 +91,10 @@
 /****** RESPONSIVE START *******/
 
 @media only screen and (max-width : 900px) {
+
+    .md-card {
+        padding: 1em !important;
+    }
 
     .md-card .info {
         display: flex;

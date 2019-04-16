@@ -48,7 +48,7 @@ class Dashboard extends Component {
                 { appLoaded
                     ?
                     <div className="dashboard">
-                        <MediaQuery query="(min-width: 900px)">
+                        <MediaQuery query="(min-width: 901px)">
                             <MockDraftSide
                                 isMasterMock={false}
                                 isMobile={this.state.isMobile} />

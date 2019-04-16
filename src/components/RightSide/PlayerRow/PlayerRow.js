@@ -23,30 +23,30 @@ class PlayerRow extends Component {
 
         return (
             <div>
-                <div className="d-flex p-3 flex-row">
+                <div className="d-flex flex-row search-row">
                     {type === 'playerSearch' &&
-                        <span className="d-flex flex-row player-row">
+                        <span className="d-flex align-items-center flex-row player-row">
                             <span className="player-row-num">{ orderNum }.</span>
                             <span className="player-row-name">{ result.name }</span>
                             <span className="player-row-position">{ result.position }</span>
                             <span className="player-row-school">{ result.school }</span>
-                            <span className="player-row-conference">{ result.conference }</span>
+                            {/*<span className="player-row-conference">{ result.conference }</span>*/}
                             {/*<span className="player-row-offOrDef">{ result.offOrDef }</span>*/}
                             <button className="add-btn pt-1 pb-1 pr-2 pl-2 ml-3" onClick={this.selectPlayerForPick}>
                                 <FontAwesomeIcon icon="plus" />
                             </button>
                         </span>
-                    }
+                        }
 
                     {type === 'teamSearch' &&
-                    <span className="d-flex flex-row player-row">
-                            <span className="player-row-num">{ orderNum }.</span>
-                            <span className="team-row-name">{ result.name }</span>
-                            <button className="add-btn pt-1 pb-1 pr-2 pl-2 ml-3" onClick={this.selectTeamForPick}>
-                                <FontAwesomeIcon icon="plus" />
-                            </button>
-                        </span>
-                    }
+                        <span className="d-flex align-items-center flex-row player-row">
+                                <span className="player-row-num">{ orderNum }.</span>
+                                <span className="team-row-name">{ result.name }</span>
+                                <button className="add-btn pt-1 pb-1 pr-2 pl-2 ml-3" onClick={this.selectTeamForPick}>
+                                    <FontAwesomeIcon icon="plus" />
+                                </button>
+                            </span>
+                        }
                 </div>
                 <hr />
             </div>

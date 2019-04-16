@@ -74,6 +74,7 @@ class SignIn extends Component {
                                 <input
                                     id="textOne"
                                     value={ passInput }
+                                    type="password"
                                     onChange={this.handlePassChange}
                                     placeholder="Password"
                                 />

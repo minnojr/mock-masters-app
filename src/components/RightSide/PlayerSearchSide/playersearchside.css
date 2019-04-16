@@ -7,16 +7,10 @@
 }
 
 .nav-right {
-    background-color: #238BFB;
-    padding: 10px 20px;
-    max-height: 40px;
-    flex-grow: 2;
-    color: white;
-    text-align: right;
-    margin-bottom: 25px;
+    background-color: #238BFB !important;
 }
 
-.nav-right a {
+.nav-side a {
     color: white;
     margin-left: 50px;
 }
@@ -35,11 +29,38 @@ button.searchToggle:focus {
     outline: none;
 }
 
+.md-focus .md-card {
+    background-color: #DEEEFF;
+}
+
 button.searchToggle {
     padding: 7px 25px !important;
 }
 
-.edit-pick .searchBtns .notShowing {
+.edit-pick button {
+    /*border-top: 1px solid lightgrey !important;*/
+    /*border-bottom: 0.5px solid lightgrey !important;*/
+    padding: 5px 50px;
+    font-size: 12px;
+    text-space: 5px;
+    width: 50%;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.edit-pick button.left {
+    border-right: 1px solid lightgrey !important;
+}
+
+.edit-pick {
+    margin-bottom: 10px !important;
+    margin-top: 12px !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    font-weight: 800 !important;
+}
+
+.edit-pick .notShowing {
     /*border-bottom: 3px solid transparent !important;*/
     /*border-top: 0.5px solid lightgrey;*/
     /*border-left: 0.5px solid lightgrey;*/
@@ -47,8 +68,9 @@ button.searchToggle {
     background-color: white !important;
 }
 
-.edit-pick .searchBtns .showing {
-    background-color: #FEE3E3 !important;
+.edit-pick .showing {
+    font-weight: 400;
+    background-color: #DEEEFF !important;
 }
 
 /****** RESPONSIVE START *******/
@@ -59,6 +81,19 @@ button.searchToggle {
         width: 100% !important;
     }
 
+    .searchbar {
+        min-height: 25px !important;
+        max-height: 30px !important;
+    }
+
+    .edit-pick .showing {
+        font-weight: 800;
+        background-color: #F8F8F8 !important;
+    }
+
+    .edit-pick button {
+        border-bottom: none !important;
+    }
 
 }
 

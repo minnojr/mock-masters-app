@@ -26,12 +26,12 @@ class MockDraftSide extends PureComponent {
 
         return (
             <Fragment>
-                <MediaQuery query="(min-width: 900px)">
+                <MediaQuery query="(min-width: 901px)">
                     <div className="app-side left-side">
-                        <div className="nav-left">MOCK MASTERS</div>
+                        <div className="nav-side nav-left">MOCK MASTERS</div>
 
                         <h3 className="text-center mb-4 md-header">MOCK DRAFT</h3>
-                        <h6 className="text-center mb-4">Score: {this.props.mockdraft.draftScore}</h6>
+                        {/*<h6 className="text-center mb-4">Score: {this.props.mockdraft.draftScore}</h6>*/}
 
                         <MockDraftList
                             mockdraft={this.props.mockdraft}
@@ -41,7 +41,10 @@ class MockDraftSide extends PureComponent {
 
                 <MediaQuery query="(max-width: 900px)">
                     <div className="d-flex flex-column app-side mobile p-0">
-                        <div className="nav-left"><h6>MOCK MASTERS</h6></div>
+                        <div className="nav-side nav-left">
+                            <a onClick={this.handleSignOut}><h6>SIGN OUT</h6></a>
+                            <a className="mm-nav-header"><h6>MOCK MASTERS</h6></a>
+                        </div>
                             <div className="mobile-nav-toggle main_nav">
                                 <button
                                     className={`left ${leftShowing}`}

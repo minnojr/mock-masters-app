@@ -100,26 +100,24 @@ class PlayerSearchSide extends PureComponent {
 
         const leftShowing = this.props.showing === false ? 'showing' : 'notShowing';
         const rightShowing = this.props.showing === true ? 'showing' : 'notShowing';
-        console.log("Showing??");
-        console.log(this.props.showing);
 
         return (
             <Fragment>
-                <MediaQuery query="(min-width: 900px)">
+                <MediaQuery query="(min-width: 901px)">
                     <div className="app-side right-side">
-                        <div className="nav-right">
+                        <div className="nav-side nav-right">
                             { user.admin
                                 ? <a href="/mm-only/admin">Admin Console</a>
                                 : ""
                             }
-                            <a onClick={this.handleSignOut}>SIGN OUT</a>
+                            <a onClick={this.handleSignOut}><h6>SIGN OUT</h6></a>
                         </div>
 
                         <PickRow pickId={focusPick} focusPick={true} />
 
-                        <div className="searchBtns d-flex mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
-                            <button className={`searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Edit Team</button>
-                            <button className={`searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Edit Player</button>
+                        <div className="edit-pick d-flex mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
+                            <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Team Search</button>
+                            <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Player Search</button>
                         </div>
 
 
@@ -128,20 +126,21 @@ class PlayerSearchSide extends PureComponent {
                         }}/>
                         { this.state.showing === "playerSearch" &&
                         <span className="d-flex flex-row player-row-header">
-                        <span className="player-row-num">#</span>
-                        <span className="player-row-name">PLAYER</span>
-                        <span className="player-row-position">POS</span>
-                        <span className="player-row-school">SCHOOL</span>
-                        <span className="player-row-conference">CONF</span>
-                        <span className="ml-4 player-row-conference">DRAFT</span>
+                        <span className="player-row-name pl-2">Player Results</span>
+                        {/*<span className="player-row-num">#</span>*/}
+                        {/*<span className="player-row-name">PLAYER</span>*/}
+                        {/*<span className="player-row-position">POS</span>*/}
+                        {/*<span className="player-row-school">SCHOOL</span>*/}
+                        {/*<span className="player-row-conference">CONF</span>*/}
+                        {/*<span className="ml-4 player-row-conference">DRAFT</span>*/}
                             {/*<span className="player-row-offOrDef">O/D</span>*/}
                     </span>
                         }
 
                         {this.state.showing === "teamSearch" &&
                         <span className="d-flex flex-row player-row-header pl-3">
-                        <span className="player-row-num pl-3">#</span>
-                        <span className="team-row-name">TEAM</span>
+                        <span className="player-row-name pl-2">Team Results</span>
+                        {/*<span className="team-row-name">TEAM</span>*/}
                     </span>
                         }
                         <div className="search-container">
@@ -164,15 +163,16 @@ class PlayerSearchSide extends PureComponent {
                         {/*<div className="nav-right">*/}
                         {/*</div>*/}
 
-                        <div className="nav-left">
-                            <h6>MOCK MASTERS</h6>
+                        <div className="nav-side nav-right">
+                            <a onClick={this.handleSignOut}><h6>SIGN OUT</h6></a>
+                            <a className="mm-nav-header"><h6>MOCK MASTERS</h6></a>
                             { user.admin
                                 ? <a href="/mm-only/admin">Admin Console</a>
                                 : ""
                             }
-                            <a onClick={this.handleSignOut}>SIGN OUT</a>
+
                         </div>
-                        <div className="mobile-nav-toggle">
+                        <div className="mobile-nav-toggle main_nav">
                             <button
                                 className={`left ${leftShowing}`}
                                 value={"leftSide"}
@@ -187,34 +187,33 @@ class PlayerSearchSide extends PureComponent {
                             </button>
                         </div>
 
-                        <PickRow pickId={focusPick} focusPick={true} />
-
-                        <div className="mobile-nav-toggle edit-pick">
-                            <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Edit Team</button>
-                            <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Edit Player</button>
+                        <div className="edit-pick">
+                            <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Team Search</button>
+                            <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Player Search</button>
                         </div>
 
+                        <PickRow pickId={focusPick} focusPick={true} />
 
                         <SearchBar type={this.state.showing} query={this.state.searchQuery} updateQuery={(searchQuery) => {
                             this.updateQuery(searchQuery)
                         }}/>
                         { this.state.showing === "playerSearch" &&
-                        <span className="d-flex flex-row player-row-header">
-                        <span className="player-row-num">#</span>
-                        <span className="player-row-name">PLAYER</span>
-                        <span className="player-row-position">POS</span>
-                        <span className="player-row-school">SCHOOL</span>
-                        <span className="player-row-conference">CONF</span>
-                        <span className="ml-4 player-row-conference">DRAFT</span>
-                            {/*<span className="player-row-offOrDef">O/D</span>*/}
-                    </span>
+                        <span className="player-row-header">
+                            <span className="player-row-num pl-2">Player Results</span>
+                            {/*<span className="player-row-name">PLAYER</span>*/}
+                            {/*<span className="player-row-position">POS</span>*/}
+                            {/*<span className="player-row-school">SCHOOL</span>*/}
+                            {/*<span className="player-row-conference">CONF</span>*/}
+                            {/*<span className="ml-4 player-row-conference">DRAFT</span>*/}
+                                {/*<span className="player-row-offOrDef">O/D</span>*/}
+                        </span>
                         }
 
                         {this.state.showing === "teamSearch" &&
-                        <span className="d-flex flex-row player-row-header pl-3">
-                        <span className="player-row-num pl-3">#</span>
-                        <span className="team-row-name">TEAM</span>
-                    </span>
+                        <span className="player-row-header">
+                            <span className="player-row-num pl-2">Team Results</span>
+                            {/*<span className="team-row-name">TEAM</span>*/}
+                        </span>
                         }
                         <div className="search-container">
                             <PlayerSearchList searchResults={filteredSearchResults} type={ this.state.showing } searchQuery={this.state.searchQuery}/>
