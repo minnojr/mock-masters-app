@@ -29,15 +29,15 @@ class PickPlayerCard extends PureComponent {
 
         const { focusPick, player, pick } = this.props;
 
-        let editablePick = focusPick ? "" : "editablePick";
+        let editablePick = focusPick ? "focus_pick" : "editablePick";
 
         return (
-            <div className={`d-flex card p-3 col-8 md-card br5 ${editablePick}`} onClick={this.handleEditClick}>
+            <div ref={editablePick} className={`d-flex card p-3 col-8 md-card br5 ${editablePick}`} onClick={this.handleEditClick}>
                 <span className="info">
                     <span className="player-name">{ player.name }</span>
                     <span className="player-info">{ player.position }</span>
                     <span className="player-info">{ player.school }</span>
-                    <span className="player-info">Score: { pick.pickScore }</span>
+                    {/*<span className="player-info">Score: { pick.pickScore }</span>*/}
                     {/*<span className="player-info">{ player.conference }</span>*/}
                     {/*<span className="player-info">{ player.offOrDef }</span>*/}
                 </span>

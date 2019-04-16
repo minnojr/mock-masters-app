@@ -98,6 +98,10 @@ class PlayerSearchSide extends PureComponent {
         const playerSearchClass = this.state.showing === "playerSearch" ? 'showing' : 'notShowing';
         const teamSearchClass = this.state.showing === "teamSearch" ? 'showing' : 'notShowing';
 
+        const leftShowing = this.props.showing === false ? 'showing' : 'notShowing';
+        const rightShowing = this.props.showing === true ? 'showing' : 'notShowing';
+        console.log("Showing??");
+        console.log(this.props.showing);
 
         return (
             <Fragment>
@@ -157,34 +161,37 @@ class PlayerSearchSide extends PureComponent {
                 <MediaQuery query="(max-width: 900px)">
 
                     <div className="d-flex flex-column app-side mobile p-0">
-                        <div className="nav-right">
+                        {/*<div className="nav-right">*/}
+                        {/*</div>*/}
+
+                        <div className="nav-left">
+                            <h6>MOCK MASTERS</h6>
                             { user.admin
                                 ? <a href="/mm-only/admin">Admin Console</a>
                                 : ""
                             }
                             <a onClick={this.handleSignOut}>SIGN OUT</a>
                         </div>
-
-                        <div className="d-flex justify-content-center mb-5">
+                        <div className="mobile-nav-toggle">
                             <button
-                                className={this.props.showing === "leftSide" ? 'showing' : 'notShowing'}
+                                className={`left ${leftShowing}`}
                                 value={"leftSide"}
                                 onClick={this.props.toggleDashboards}>
-                                My Mock Draft
+                                MY MOCK
                             </button>
                             <button
-                                className={this.props.showing === "rightSide" ? 'showing' : 'notShowing'}
+                                className={`right ${rightShowing}`}
                                 value={"rightSide"}
                                 onClick={this.props.toggleDashboards}>
-                                Player Search
+                                EDIT PICK
                             </button>
                         </div>
 
                         <PickRow pickId={focusPick} focusPick={true} />
 
-                        <div className="searchBtns d-flex mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
-                            <button className={`searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Edit Team</button>
-                            <button className={`searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Edit Player</button>
+                        <div className="mobile-nav-toggle edit-pick">
+                            <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Edit Team</button>
+                            <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Edit Player</button>
                         </div>
 
 

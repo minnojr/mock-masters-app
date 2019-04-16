@@ -54,7 +54,6 @@
 
 .md-card {
     display: flex;
-
 }
 
 .md-card .info {
@@ -86,5 +85,35 @@
 .br5 {
     border-radius: 0.50rem !important;
     border: 0.5px solid #979797 !important;
+}
+
+/****** RESPONSIVE START *******/
+
+@media only screen and (max-width : 900px) {
+
+    .md-card .info {
+        display: flex;
+        cursor: default;
+        max-height: 30px;
+        flex-grow: 1;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .player-name {
+        flex-grow: 2;
+        text-align: left;
+        min-width: 45%;
+        max-width: 45%;
+        padding-left: 1.5em;
+        font-size: 11px;
+    }
+
+    .player-info {
+        flex-grow: 1;
+        font-size: 9px;
+        text-align: center;
+    }
+
 }
 

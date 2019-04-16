@@ -1,6 +1,6 @@
 .nav-left {
     background-color: #F54444;
-    padding: 10px 20px;
+    padding: 8px 20px;
     max-height: 40px;
     flex-grow: 2;
     color: white;
@@ -24,6 +24,55 @@
 
     .app-side {
         width: 100% !important;
+    }
+
+    .nav-left {
+        margin-bottom: 25px;
+        max-height: 30px;
+        padding: 9px 20px;
+    }
+
+    .nav-left h6 {
+        font-size: 11px;
+        font-weight: 600;
+    }
+
+    .mockdraft-container {
+        overflow: visible !important;
+    }
+
+    .mobile-nav-toggle {
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    .mobile-nav-toggle button {
+        border: 1px solid lightgrey !important;
+        padding: 8px 50px;
+        font-size: 12px;
+        text-space: 5px;
+    }
+
+    button.left {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    button.right {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    .main_nav button.showing {
+        border-bottom: 3px solid #238BFB !important;
+    }
+
+    /*.edit-pick {*/
+        /*padding: 8px 50px !important;*/
+    /*}*/
+
+    .md-header {
+        display: none;
     }
 
 

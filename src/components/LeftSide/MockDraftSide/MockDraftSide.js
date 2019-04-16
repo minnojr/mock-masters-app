@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
+import ReactDOM from 'react-dom'
 import { connect } from "react-redux";
 import './mockdraftside.css'
 import moize from 'moize';
@@ -12,10 +13,16 @@ import {onEditPick} from "../../../actions/toggleMobile";
 class MockDraftSide extends PureComponent {
 
     componentDidMount() {
-        this.props.dispatch(onEditPick(false))
+        this.props.dispatch(onEditPick(false));
+        console.log("REF:...");
+        console.log(this.props.myRef);
     }
 
     render() {
+
+
+        const leftShowing = this.props.showing === false ? 'showing' : 'notShowing';
+        const rightShowing = this.props.showing === true ? 'showing' : 'notShowing';
 
         return (
             <Fragment>
@@ -34,25 +41,24 @@ class MockDraftSide extends PureComponent {
 
                 <MediaQuery query="(max-width: 900px)">
                     <div className="d-flex flex-column app-side mobile p-0">
-                        <div className="nav-left">MOCK MASTERS</div>
-
-                            <div className="d-flex justify-content-center mb-5">
+                        <div className="nav-left"><h6>MOCK MASTERS</h6></div>
+                            <div className="mobile-nav-toggle main_nav">
                                 <button
-                                    className={this.props.showing === "leftSide" ? 'showing' : 'notShowing'}
+                                    className={`left ${leftShowing}`}
                                     value={"leftSide"}
                                     onClick={this.props.toggleDashboards}>
-                                    My Mock Draft
+                                    MY MOCK
                                 </button>
                                 <button
-                                    className={this.props.showing === "rightSide" ? 'showing' : 'notShowing'}
+                                    className={`right ${rightShowing}`}
                                     value={"rightSide"}
                                     onClick={this.props.toggleDashboards}>
-                                    Player Search
+                                    EDIT PICK
                                 </button>
                             </div>
 
-                            <h3 className="text-center mb-4 md-header">MOCK DRAFT</h3>
-                            <h6 className="text-center mb-4">Score: {this.props.mockdraft.draftScore}</h6>
+                            <h3 className="text-center md-header">MOCK DRAFT</h3>
+                            {/*<h6 className="text-center mb-4">Score: {this.props.mockdraft.draftScore}</h6>*/}
 
                             <MockDraftList
                                 mockdraft={this.props.mockdraft}

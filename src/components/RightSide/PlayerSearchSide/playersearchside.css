@@ -36,21 +36,19 @@ button.searchToggle:focus {
 }
 
 button.searchToggle {
-    padding: 10px;
+    padding: 7px 25px !important;
 }
 
-.searchBtns .notShowing {
-    border-bottom: 3px solid transparent !important;
-    border-top: 0.5px solid lightgrey;
-    border-left: 0.5px solid lightgrey;
-    border-right: 0.5px solid lightgrey;
+.edit-pick .searchBtns .notShowing {
+    /*border-bottom: 3px solid transparent !important;*/
+    /*border-top: 0.5px solid lightgrey;*/
+    /*border-left: 0.5px solid lightgrey;*/
+    /*border-right: 0.5px solid lightgrey;*/
+    background-color: white !important;
 }
 
-.searchBtns .showing {
-    border-bottom: 3px solid #238BFB !important;
-    border-top: 0.5px solid transparent !important;
-    border-left: 0.5px solid lightgrey !important;
-    border-right: 0.5px solid lightgrey !important;
+.edit-pick .searchBtns .showing {
+    background-color: #FEE3E3 !important;
 }
 
 /****** RESPONSIVE START *******/

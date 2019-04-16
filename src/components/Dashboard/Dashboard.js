@@ -11,6 +11,9 @@ import {onEditPick} from "../../actions/toggleMobile";
 
 
 class Dashboard extends Component {
+    componentWillMount() {
+        this.myRef = React.createRef();
+    }
 
     state = {
         showing: "leftSide",
@@ -58,11 +61,11 @@ class Dashboard extends Component {
                                 { !this.props.toggleMobile
                                     ? <MockDraftSide
                                         isMasterMock={false}
-                                        showing={this.state.showing}
+                                        showing={this.props.toggleMobile}
                                         isMobile={this.state.isMobile}
                                         toggleDashboards={this.toggleDashboards} />
                                     : <PlayerSearchSide
-                                        showing={this.state.showing}
+                                        showing={this.props.toggleMobile}
                                         toggleDashboards={this.toggleDashboards} />
                                 }
                             </div>

@@ -2,3 +2,31 @@
     font-size: 20px;
     font-weight: 600;
 }
+
+.team-card img {
+    max-height: 75px;
+    width: 75px;
+}
+
+/****** RESPONSIVE START *******/
+
+@media only screen and (max-width : 900px) {
+
+    .team-card img {
+        max-height: 50px;
+        width: 50px;
+    }
+
+    .pick-num {
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: 5px;
+        text-align: center;
+    }
+
+    .mockdraftlist .col-4 {
+        /*flex: 0 0 33.333333%;*/
+        /*max-width: 25%%;*/
+    }
+
+}

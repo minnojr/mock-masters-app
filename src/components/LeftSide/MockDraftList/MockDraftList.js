@@ -27,7 +27,6 @@ class MockDraftList extends Component {
             return (
                 <div className="mockdraft-container">
                     <ul className="mockdraftlist">
-                        {/*<GradePickBtn/>*/}
 
                         {mockdraft.picks.map((pick) =>
                         {
