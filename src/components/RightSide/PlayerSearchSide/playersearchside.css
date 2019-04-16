@@ -16,6 +16,17 @@
     margin-bottom: 25px;
 }
 
+.nav-right a {
+    color: white;
+    margin-left: 50px;
+}
+
+.nav-right a:hover {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 button.add-btn {
     background-color: #FEE3E3;
 }
@@ -41,3 +52,16 @@ button.searchToggle {
     border-left: 0.5px solid lightgrey !important;
     border-right: 0.5px solid lightgrey !important;
 }
+
+/****** RESPONSIVE START *******/
+
+@media only screen and (max-width : 900px) {
+
+    .app-side {
+        width: 100% !important;
+    }
+
+
+}
+
+/****** RESPONSIVE END *******/

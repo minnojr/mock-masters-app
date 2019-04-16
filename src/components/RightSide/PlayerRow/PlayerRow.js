@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { editPickPlayer, editPickTeam } from "../../../actions/picks";
+import { handleEditPickPlayer, handleEditPickTeam } from "../../../actions/picks";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './playerrow.css'
 
@@ -9,12 +9,12 @@ class PlayerRow extends Component {
 
     selectPlayerForPick = () => {
         const { focusPick, result } = this.props;
-        this.props.dispatch(editPickPlayer(focusPick, result.id))
+        this.props.dispatch(handleEditPickPlayer(focusPick, result.id))
     };
 
     selectTeamForPick = () => {
         const { focusPick, result } = this.props;
-        this.props.dispatch(editPickTeam(focusPick, result.id))
+        this.props.dispatch(handleEditPickTeam(focusPick, result.id))
     };
 
     render() {
@@ -31,7 +31,7 @@ class PlayerRow extends Component {
                             <span className="player-row-position">{ result.position }</span>
                             <span className="player-row-school">{ result.school }</span>
                             <span className="player-row-conference">{ result.conference }</span>
-                            <span className="player-row-offOrDef">{ result.offOrDef }</span>
+                            {/*<span className="player-row-offOrDef">{ result.offOrDef }</span>*/}
                             <button className="add-btn pt-1 pb-1 pr-2 pl-2 ml-3" onClick={this.selectPlayerForPick}>
                                 <FontAwesomeIcon icon="plus" />
                             </button>

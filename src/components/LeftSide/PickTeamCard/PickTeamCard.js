@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from "react-redux";
-import { editPickTeam } from "../../../actions/picks";
 import './pickteamcard.css'
-import {compose} from "redux";
-import {firestoreConnect} from "react-redux-firebase";
 
-class PickTeamCard extends Component {
+class PickTeamCard extends PureComponent {
 
     render() {
 
@@ -29,9 +26,10 @@ function mapStateToProps({ teams, picks }, { teamId, pickId }) {
     const team = teams[pick.teamId];
     const pickNum = pick.pickNum;
     const emptyObj = {};
+    const zero = 0;
 
     return {
-        pickNum : pickNum ? pickNum : 0,
+        pickNum : pickNum ? pickNum : zero,
         team : team ? team : emptyObj
     }
 }

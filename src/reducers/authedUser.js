@@ -1,9 +1,45 @@
-import { SET_AUTHED_USER } from "../actions/authedUser";
+import {
+    LOGIN_ERROR,
+    LOGIN_SUCCESS,
+    SIGNOUT_SUCCESS,
+    SIGNUP_ERROR,
+    SIGNUP_SUCCESS
+} from "../actions/authedUser";
 
-export default function authedUser (state = null, action) {
+const initState = {
+    authError: null
+};
+
+export default function authedUser (state = initState, action) {
     switch(action.type) {
-        case SET_AUTHED_USER :
-            return action.id;
+        case LOGIN_ERROR :
+            console.log('login error');
+            return {
+                ...state,
+                authError: action.err.message
+            };
+        case LOGIN_SUCCESS :
+            console.log('login success');
+            return {
+                ...state,
+                authedError: null
+            };
+        case SIGNOUT_SUCCESS :
+            console.log('Signout success');
+            return {
+                ...state,
+                authedError: null
+            };
+        case SIGNUP_SUCCESS :
+            return {
+                ...state,
+                authError: null
+            };
+        case SIGNUP_ERROR :
+            return {
+                ...state,
+                authError: action.err.message
+            };
         default :
             return state;
     }

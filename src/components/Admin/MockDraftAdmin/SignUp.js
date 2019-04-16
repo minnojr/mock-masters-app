@@ -1,34 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { signUp } from "../../../actions/authedUser";
 
-import { setAuthedUser } from "../../actions/authedUser";
 
-
-class Signin extends Component {
+class SignUp extends Component {
 
     state = {
         codeInput: "",
         emailInput:""
     };
 
-    authenticateUser = () => {
-
-    }
-
-    handleLogin = (e) => {
+    handleSignUp = (e) => {
         e.preventDefault();
 
         const { codeInput, emailInput } = this.state;
-        console.log("\n\n********");
-        console.log(codeInput);
-        console.log(emailInput);
+        this.props.dispatch(signUp({
+            email: emailInput,
+            password: codeInput
+        }))
 
-        // this.props.dispatch(setAuthedUser(e.target.value));
     };
 
     handleCodeChange = (e) => {
         e.preventDefault();
-        console.log(e.target.value);
 
         this.setState({
             codeInput: e.target.value
@@ -37,7 +31,6 @@ class Signin extends Component {
 
     handleEmailChange = (e) => {
         e.preventDefault();
-        console.log(e.target.value);
 
         this.setState({
             emailInput: e.target.value
@@ -47,28 +40,34 @@ class Signin extends Component {
     render() {
 
         const { codeInput, emailInput } = this.state;
+        const { authError } = this.props;
 
         return (
             <div>
-                <div className="login-container d-flex flex-column mt-lg-5">
+                <div className="login-container d-flex flex-column mt-lg-5 w-100">
                     {/*<h3 className="d-flex justify-content-center mb-5 pb-5 border-bottom"></h3>*/}
-                    <div className="flex-column login-box">
-                        <h4 className="d-flex justify-content-center">Signin</h4>
+                    <div className="flex-column login-box w-100">
+                        <h4 className="d-flex justify-content-center">Create User</h4>
                         <div className="d-flex justify-content-center">
-                            <form className="d-flex flex-column" onSubmit={this.handleLogin}>
+                            <form className="d-flex flex-column w-50" onSubmit={this.handleSignUp}>
                                 <input
                                     id="textOne"
                                     value={ emailInput }
                                     onChange={this.handleEmailChange}
                                     placeholder="Enter Email"
                                 />
+                                <br />
                                 <input
                                     id="textOne"
                                     value={ codeInput }
                                     onChange={this.handleCodeChange}
-                                    placeholder="Enter Code"
+                                    placeholder="Enter Password"
                                 />
-                                <button type="submit">Submit</button>
+                                <br />
+                                <button type="submit">Sign Up</button>
+                                <div className="m-3">
+                                    { authError ? <p>{authError}</p>: null }
+                                </div>
                             </form>
 
                         </div>
@@ -81,9 +80,9 @@ class Signin extends Component {
 
 function mapStateToProps({ authedUser, users }) {
     return {
-        authedUser,
-        users
+        users,
+        authError: authedUser.authError ? authedUser.authError : ""
     }
 }
 
-export default connect(mapStateToProps)(Signin);
+export default connect(mapStateToProps)(SignUp);

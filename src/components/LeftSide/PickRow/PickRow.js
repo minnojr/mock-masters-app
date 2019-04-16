@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from "react-redux";
 
 import PickPlayerCard from '../PickPlayerCard/PickPlayerCard';
 import PickTeamCard from '../PickTeamCard/PickTeamCard'
 
-class PickRow extends Component {
+class PickRow extends PureComponent {
 
     render() {
         const { pickId, focusPick } = this.props;
@@ -28,7 +28,10 @@ class PickRow extends Component {
             <div>
                 <div className={`d-flex flex-row col-12 mb-2 ${focusClass}`}>
                     <PickTeamCard pickId={pickId} focusPick={isFocusPick}/>
-                    <PickPlayerCard pickId={pickId} focusPick={isFocusPick}/>
+                    <PickPlayerCard
+                        pickId={pickId}
+                        focusPick={isFocusPick}
+                        isMobile={this.props.isMobile} />
                 </div>
             </div>
         )

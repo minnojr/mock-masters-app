@@ -1,60 +1,87 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import './dashboard.css'
 import MediaQuery from 'react-responsive';
 
 import MockDraftSide from '../LeftSide/MockDraftSide/MockDraftSide'
 import PlayerSearchSide from "../RightSide/PlayerSearchSide/PlayerSearchSide";
+import { connect } from "react-redux";
+import SignIn from "../SignIn/SignIn";
+import {handleInitialData} from "../../actions/shared";
+import {onEditPick} from "../../actions/toggleMobile";
 
 
 class Dashboard extends Component {
 
     state = {
-        showing: "leftSide"
+        showing: "leftSide",
+        isMobile: window.innerWidth < 900
     };
 
-    toggleDashboards = (e) => {
-        const toggleTo = e.target.value;
+    handleWindowResize = () => {
+        this.setState({ isMobile: window.innerWidth < 900 });
+    };
 
-        if(this.state.showing !== e.target.value) {
-            this.setState((prevState) => ({
-                showing: toggleTo
-            }));
-        }
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowResize);
+    };
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowResize);
+    };
+
+
+    toggleDashboards = () => {
+        this.props.dispatch(onEditPick(!this.props.toggleMobile))
     };
 
     render() {
+        const { auth, appLoaded, toggleMobile } = this.props;
+
+        console.log("toggleMobile State:");
+        console.log(toggleMobile);
+
         return (
-            <div className="dashboard">
-
-                <MediaQuery query="(min-width: 935px)">
-
-                        {/*<div className="left-dashboard d-flex col-6 justify-content-center pl-0 pr-0">*/}
-                            <MockDraftSide />
-                        {/*</div>*/}
-                        {/*<div className="right-dashboard d-flex col-6 justify-content-center">*/}
+            <span>
+                { appLoaded
+                    ?
+                    <div className="dashboard">
+                        <MediaQuery query="(min-width: 900px)">
+                            <MockDraftSide
+                                isMasterMock={false}
+                                isMobile={this.state.isMobile} />
                             <PlayerSearchSide />
-                        {/*</div>*/}
-
-                </MediaQuery>
+                        </MediaQuery>
 
 
-                <MediaQuery query="(max-width: 935px)">
-                    <div className="d-flex flex-column col-12 container p-0">
-                        <div className="d-flex col-12 justify-content-center p-0">
-                            <button className={this.state.showing === "leftSide" ? 'showing' : 'notShowing'} value={"leftSide"} onClick={this.toggleDashboards}>My Mock Draft</button>
-                            <button className={this.state.showing === "rightSide" ? 'showing' : 'notShowing'}  value={"rightSide"} onClick={this.toggleDashboards}>Player Search</button>
-                        </div>
-                        <hr />
-                        { this.state.showing === "leftSide"
-                            ? <MockDraftSide />
-                            : <PlayerSearchSide />
-                        }
+                        <MediaQuery query="(max-width: 900px)">
+                            <div className="d-flex flex-column col-12 container p-0">
+                                { !this.props.toggleMobile
+                                    ? <MockDraftSide
+                                        isMasterMock={false}
+                                        showing={this.state.showing}
+                                        isMobile={this.state.isMobile}
+                                        toggleDashboards={this.toggleDashboards} />
+                                    : <PlayerSearchSide
+                                        showing={this.state.showing}
+                                        toggleDashboards={this.toggleDashboards} />
+                                }
+                            </div>
+                        </MediaQuery>
                     </div>
-                </MediaQuery>
-
-            </div>
+                    : ""
+                }
+            </span>
         )
     }
 }
 
-export default Dashboard;
+function mapStateToProps({ firebase, appLoaded, toggleMobile }) {
+
+    return {
+        auth: firebase.auth,
+        appLoaded,
+        toggleMobile
+    }
+}
+
+export default connect(mapStateToProps)(Dashboard);

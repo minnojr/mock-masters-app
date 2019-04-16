@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { connect } from "react-redux";
 import { firestoreConnect, firebaseConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import { Redirect } from 'react-router-dom'
+import './admin.css';
 
-import { handleAddAllPlayers, handleAddPlayer } from "../../actions/players";
-import { handleAddAllTeams } from "../../actions/teams";
-import { handleAddMock } from "../../actions/mockdrafts";
-import { handleGenerateMockPicks } from "../../actions/picks";
+import { NavLink } from "react-router-dom";
+import {setAppLoaded} from "../../actions/appLoaded";
+import { handleSetDraftStatus } from "../../actions/liveDraft";
 
-import EditMock from './EditMock';
-
-import { players } from "../../utils/player-prospect-data";
-import { teams } from "../../utils/team-data";
-
-class Admin extends Component {
+class Admin extends PureComponent {
 
     state = {
         playerName: "",
@@ -24,210 +20,70 @@ class Admin extends Component {
         setFocusMock: "",
     };
 
-    addPicksToMock = (mockId) => {
-        // create picks
-        this.props.dispatch(handleGenerateMockPicks(mockId));
+    toggleEnterLive = () => {
+        this.props.dispatch(handleSetDraftStatus(true));
     };
 
-    handleClickAddNewMock =  () => {
-        this.props.dispatch(handleAddMock());
-    };
-
-
-    populatePlayersCollection = (e) => {
-        e.preventDefault();
-
-        let playerArr = [];
-        let rank = 1;
-        for(let p in players) {
-            let play = players[p];
-
-            let playerObj = {
-                "name": play.name,
-                "position": play.position,
-                "offOrDef": play.offOrDef,
-                "school": play.school,
-                "conference": play.conference,
-                "rank": rank++,
-                "createdAt": new Date()
-            };
-
-            playerArr.push(playerObj);
-        }
-        this.props.dispatch(handleAddAllPlayers(playerArr));
-    };
-
-    populateTeamsCollection = (e) => {
-        e.preventDefault();
-
-        let teamArr = [];
-        for(let t in teams) {
-            let team = teams[t];
-
-            let teamObj = {
-                ...team,
-                "createdAt": new Date()
-            };
-
-            teamArr.push(teamObj);
-        }
-        this.props.dispatch(handleAddAllTeams(teamArr));
-    };
-
-    newMockAndPicksInstance = (e) => {
-        e.preventDefault();
-        console.log("1111111");
-
-
-    };
-
-    addNewPlayer = (player) => {
-        // e.preventDefault();
-        // const { playerName, playerPosition, playerSchool, playerConf, playerOffOrDef } = this.state;
-
-        // let player = {
-        //     name: playerName,
-        //     position: playerPosition,
-        //     school: playerSchool,
-        //     conference: playerConf,
-        //     offOrDef: playerOffOrDef
-        // };
-
-        this.props.dispatch(handleAddPlayer(player));
-    };
-
-    handleNameChange = (e) => {
-        e.preventDefault();
-        this.setState({
-            playerName: e.target.value
-        })
-    };
-
-    handlePositionChange = (e) => {
-        e.preventDefault();
-        this.setState({
-            playerPosition: e.target.value
-        })
-    };
-
-    handleSchoolChange = (e) => {
-        e.preventDefault();
-        this.setState({
-            playerSchool: e.target.value
-        })
-    };
-
-    handleConfChange = (e) => {
-        e.preventDefault();
-        this.setState({
-            playerConf: e.target.value
-        })
-    };
-
-    handleOffOrDefChange = (e) => {
-        e.preventDefault();
-        this.setState({
-            playerOffOrDef: e.target.value
-        })
+    toggleDiableLive = () => {
+        this.props.dispatch(handleSetDraftStatus(false));
     };
 
     render() {
 
-        const { playerName, playerPosition, playerSchool, playerConf, playerOffOrDef } = this.state;
-
-        // console.log(this.props.firebase);
+        const { user, liveDraft } = this.props;
 
         return (
-            <div className="d-flex w-25 m-5 flex-column">
-                <h4>Add New Player Prospect</h4>
-                <form className="d-flex flex-column" onSubmit={this.newMockAndPicksInstance}>
-                    <label>Player Name</label>
-                    <input
-                        value={ playerName }
-                        onChange={this.handleNameChange}
-                        placeholder="Name"
-                    />
 
-                    <hr />
-
-                    <label>Player Position</label>
-                    <input
-                        value={ playerPosition }
-                        onChange={this.handlePositionChange}
-                        placeholder="Position"
-                    />
-
-                    <hr />
-
-                    <label>Player School</label>
-                    <input
-                        value={ playerSchool }
-                        onChange={this.handleSchoolChange}
-                        placeholder="School"
-                    />
-
-                    <hr />
-
-                    <label>Player Conference</label>
-                    <input
-                        value={ playerConf }
-                        onChange={this.handleConfChange}
-                        placeholder="Conference"
-                    />
-
-                    <hr />
-
-                    <label>Player Off or Def</label>
-                    <input
-                        value={ playerOffOrDef }
-                        onChange={this.handleOffOrDefChange}
-                        placeholder="Offense or Defense"
-                    />
-
-                   <button type="submit">Add Player</button>
-                </form>
-
-                <br />
-                <br />
-                <button onClick={this.populatePlayersCollection}>Populate Players To DB</button>
-
-                <br />
-                <br />
-                <button onClick={this.handleClickAddNewMock}>Add New Mock Draft</button>
-                <br />
-                <br />
-
-                <div className="card">
-                    <h5> Mock Drafts </h5>
-                    <div>
-                        { this.props.mockdrafts && this.props.mockdrafts.map((md) => {
-                            if( md.picks.length < 2) {
-                            // console.log(md.picks);
-                                return (
-                                    <EditMock key={md.id} addPicksToMock={(param) => this.addPicksToMock(param)} mockdraftId={md.id}/>
-                                )
+            <Fragment>
+            { !user.admin
+                ? <Redirect to='/' />
+                : <div className="d-flex w-50 m-5 flex-column">
+                        <h2>Mock Masters Admin Console</h2>
+                        <br />
+                        <div className="card p-3">
+                            <center><NavLink to="/"><h4>Master Mock Dashboard</h4></NavLink></center>
+                        </div>
+                        <br />
+                        <div className="card p-3">
+                            <center><NavLink to="/mm-only/admin/mockdrafts"><h4>Admin Mock Drafts Console</h4></NavLink></center>
+                        </div>
+                        <br />
+                        <div className="card p-3">
+                            <center><NavLink to="/mm-only/admin/users"><h4>Admin Users Console</h4></NavLink></center>
+                        </div>
+                        <br />
+                        <br/>
+                        <button onClick={this.toggleEnterLive}>Enter Live Mode</button>
+                        <br/>
+                        <button onClick={this.toggleDiableLive}>Diable Live Mode</button>
+                        <br/>
+                        <h3 className="draft-status">
+                            { liveDraft.isLive
+                                ?   <div className="red">
+                                        <strong className="">DRAFT  STATUS:</strong>
+                                        <p>LIVE</p>
+                                    </div>
+                                :   <div className="green">
+                                        <strong className="">DRAFT  STATUS:</strong>
+                                        <p >NOT LIVE</p>
+                                    </div>
                             }
-                        })
-                        }
-                        {/*<button on></button>*/}
+                            </h3>
                     </div>
-                    ---> { this.state.setFocusMock}
-                </div>
-            </div>
+            }
+            </Fragment>
         )
     }
 }
 
-function mapStateToProps(state) {
-    // console.log("\n\n*********\n\n");
-    let teams = state.firestore.ordered.teams;
-    let mockdrafts = state.firestore.ordered.mockdrafts;
-    // console.log(mockdrafts)
+function mapStateToProps({ firestore, firebase }) {
+    const emptyObj =  {};
+    let l = firestore.ordered.liveDraft ? firestore.ordered.liveDraft[0] : {};
+    console.log(l);
 
     return {
-        players: state.firestore.ordered.players,
-        mockdrafts: mockdrafts ? mockdrafts : [],
-        teams: teams ? teams : []
+        user: firebase.profile ? firebase.profile : emptyObj,
+        liveDraft : firestore.ordered.liveDraft ? firestore.ordered.liveDraft[0] : {}
     }
 }
 
@@ -237,6 +93,7 @@ export default compose(
     firestoreConnect([
         { collection : 'players' },
         { collection : 'mockdrafts' },
+        { collection : 'liveDraft' },
 
     ])
 )(Admin);

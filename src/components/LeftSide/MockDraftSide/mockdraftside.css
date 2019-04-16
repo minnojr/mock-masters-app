@@ -16,3 +16,17 @@
 .md-header {
     font-weight: 600;
 }
+
+
+/****** RESPONSIVE START *******/
+
+@media only screen and (max-width : 900px) {
+
+    .app-side {
+        width: 100% !important;
+    }
+
+
+}
+
+/****** RESPONSIVE END *******/

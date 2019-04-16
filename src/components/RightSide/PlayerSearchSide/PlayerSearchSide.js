@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
+import React, {Fragment, PureComponent} from 'react';
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import { signOut } from "../../../actions/authedUser";
 
 import './playersearchside.css'
 
 import PlayerSearchList from '../PlayerSearchList/PlayerSearchList';
 import SearchBar from '../SearchBar/SearchBar'
 import PickRow from '../../LeftSide/PickRow/PickRow';
-import Nav from '../../Nav/Nav'
+import MediaQuery from "react-responsive";
 
 
-class PlayerSearchSide extends Component {
+class PlayerSearchSide extends PureComponent {
+
+    componentDidMount() {
+        window.scrollTo(0,0);
+    }
 
     state = {
         searchQuery: ' ',
@@ -39,9 +44,13 @@ class PlayerSearchSide extends Component {
         }));
     };
 
+    handleSignOut = () => {
+        this.props.dispatch(signOut());
+    };
+
 
     render() {
-        const { players, focusPick, teams } = this.props;
+        const { players, focusPick, teams, user } = this.props;
 
         if(!players) {
             return (
@@ -49,18 +58,13 @@ class PlayerSearchSide extends Component {
             )
         }
 
-        // console.log(players);
         let playersArr = [];
         for(let player in players) {
             players[player].id = player;
-            // console.log(players[player]);
             playersArr = [...playersArr, players[player]];
         }
 
-
-        // console.log(playersArr);
         let allPlayers = playersArr.filter((p) => {
-            console.log(p);
             return p.name !== undefined;
         }).sort((a, b) => a.rank -  b.rank);
 
@@ -71,14 +75,22 @@ class PlayerSearchSide extends Component {
             allTeams = [...allTeams, teams[team]];
         }
 
+        // TO DO HERE --------------------->
+        // GET ALL PICKS
+        // ADD FILTER BELOW FOR ANY PLAYERS THAT HAVE SAME ID AS A PICK ID
+
         let filteredSearchResults = [];
         if(this.state.showing === "playerSearch") {
             filteredSearchResults = allPlayers.filter((player) => {
-                return player.name.trim().toLowerCase().includes(this.state.searchQuery.trim().toLowerCase())
+                const a = player.name.trim().toLowerCase().includes(this.state.searchQuery.trim().toLowerCase());
+                const ZERO = '0';
+                const b = player.rank !== ZERO;
+
+
+                return a && b;
             })
         }  else {
             filteredSearchResults = allTeams.filter((team) => {
-                console.log(team);
                 return team.name.trim().toLowerCase().includes(this.state.searchQuery.trim().toLowerCase())
             });
         }
@@ -88,57 +100,137 @@ class PlayerSearchSide extends Component {
 
 
         return (
-            <div className="app-side right-side">
+            <Fragment>
+                <MediaQuery query="(min-width: 900px)">
+                    <div className="app-side right-side">
+                        <div className="nav-right">
+                            { user.admin
+                                ? <a href="/mm-only/admin">Admin Console</a>
+                                : ""
+                            }
+                            <a onClick={this.handleSignOut}>SIGN OUT</a>
+                        </div>
 
-                <div className="nav-right">
-                    SIGN OUT
-                </div>
+                        <PickRow pickId={focusPick} focusPick={true} />
 
-                <PickRow pickId={focusPick} focusPick={true} />
-
-                <div className="searchBtns d-flex mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
-                    <button className={`searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Edit Team</button>
-                    <button className={`searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Edit Player</button>
-                </div>
+                        <div className="searchBtns d-flex mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
+                            <button className={`searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Edit Team</button>
+                            <button className={`searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Edit Player</button>
+                        </div>
 
 
-                <SearchBar type={this.state.showing} query={this.state.searchQuery} updateQuery={(searchQuery) => {
-                    this.updateQuery(searchQuery)
-                }}/>
-                { this.state.showing === "playerSearch" &&
-                    <span className="d-flex flex-row player-row-header">
+                        <SearchBar type={this.state.showing} query={this.state.searchQuery} updateQuery={(searchQuery) => {
+                            this.updateQuery(searchQuery)
+                        }}/>
+                        { this.state.showing === "playerSearch" &&
+                        <span className="d-flex flex-row player-row-header">
                         <span className="player-row-num">#</span>
                         <span className="player-row-name">PLAYER</span>
                         <span className="player-row-position">POS</span>
                         <span className="player-row-school">SCHOOL</span>
                         <span className="player-row-conference">CONF</span>
-                        <span className="player-row-offOrDef">O/D</span>
+                        <span className="ml-4 player-row-conference">DRAFT</span>
+                            {/*<span className="player-row-offOrDef">O/D</span>*/}
                     </span>
-                }
+                        }
 
-                {this.state.showing === "teamSearch" &&
-                    <span className="d-flex flex-row player-row-header pl-3">
+                        {this.state.showing === "teamSearch" &&
+                        <span className="d-flex flex-row player-row-header pl-3">
                         <span className="player-row-num pl-3">#</span>
                         <span className="team-row-name">TEAM</span>
                     </span>
-                }
-                <div className="search-container">
-                    <PlayerSearchList searchResults={filteredSearchResults} type={ this.state.showing } searchQuery={this.state.searchQuery}/>
-                </div>
-            </div>
+                        }
+                        <div className="search-container">
+                            <PlayerSearchList searchResults={filteredSearchResults} type={ this.state.showing } searchQuery={this.state.searchQuery}/>
+                        </div>
+                    </div>
+                </MediaQuery>
+
+
+
+
+
+
+
+
+
+                <MediaQuery query="(max-width: 900px)">
+
+                    <div className="d-flex flex-column app-side mobile p-0">
+                        <div className="nav-right">
+                            { user.admin
+                                ? <a href="/mm-only/admin">Admin Console</a>
+                                : ""
+                            }
+                            <a onClick={this.handleSignOut}>SIGN OUT</a>
+                        </div>
+
+                        <div className="d-flex justify-content-center mb-5">
+                            <button
+                                className={this.props.showing === "leftSide" ? 'showing' : 'notShowing'}
+                                value={"leftSide"}
+                                onClick={this.props.toggleDashboards}>
+                                My Mock Draft
+                            </button>
+                            <button
+                                className={this.props.showing === "rightSide" ? 'showing' : 'notShowing'}
+                                value={"rightSide"}
+                                onClick={this.props.toggleDashboards}>
+                                Player Search
+                            </button>
+                        </div>
+
+                        <PickRow pickId={focusPick} focusPick={true} />
+
+                        <div className="searchBtns d-flex mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
+                            <button className={`searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Edit Team</button>
+                            <button className={`searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Edit Player</button>
+                        </div>
+
+
+                        <SearchBar type={this.state.showing} query={this.state.searchQuery} updateQuery={(searchQuery) => {
+                            this.updateQuery(searchQuery)
+                        }}/>
+                        { this.state.showing === "playerSearch" &&
+                        <span className="d-flex flex-row player-row-header">
+                        <span className="player-row-num">#</span>
+                        <span className="player-row-name">PLAYER</span>
+                        <span className="player-row-position">POS</span>
+                        <span className="player-row-school">SCHOOL</span>
+                        <span className="player-row-conference">CONF</span>
+                        <span className="ml-4 player-row-conference">DRAFT</span>
+                            {/*<span className="player-row-offOrDef">O/D</span>*/}
+                    </span>
+                        }
+
+                        {this.state.showing === "teamSearch" &&
+                        <span className="d-flex flex-row player-row-header pl-3">
+                        <span className="player-row-num pl-3">#</span>
+                        <span className="team-row-name">TEAM</span>
+                    </span>
+                        }
+                        <div className="search-container">
+                            <PlayerSearchList searchResults={filteredSearchResults} type={ this.state.showing } searchQuery={this.state.searchQuery}/>
+                        </div>
+                    </div>
+
+                </MediaQuery>
+
+            </Fragment>
         )
     }
 }
 
-function mapStateToProps({ focusPick, picks, teams, players, firestore }) {
-
-    // const focusPickToEdit = picks[focusPick];
+function mapStateToProps({ focusPick, picks, teams, players, firebase }) {
     const emptyStr= "";
+    const emptyObj = {};
+    // console.log(firebase.profile);
 
     return {
-        // players: firestore.ordered.players,
+        user: firebase.profile ? firebase.profile : emptyObj,
         players,
         focusPick,
+        picks,
         teams: teams ? teams : emptyStr
     }
 }

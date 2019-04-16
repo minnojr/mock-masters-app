@@ -1,4 +1,10 @@
-import {addPicksToMock, handleAddPicksToMock} from "./mockdrafts";
+import {addPicksToMock, handleAddPicksToMock, receiveMockdrafts} from "./mockdrafts";
+import {setAppLoaded} from "./appLoaded";
+import {hideLoading, showLoading} from "react-redux-loading";
+import {receivePlayers} from "./players";
+import {setFocusPick} from "./focusPick";
+import {receiveTeams} from "./teams";
+import {loginSuccess} from "./authedUser";
 
 export const RECEIVE_PICKS = 'RECEIVE_PICKS';
 export const EDIT_PICK_PLAYER = 'EDIT_PICK_PLAYER';
@@ -14,7 +20,7 @@ export function receivePicks(picks) {
 export function handleGenerateMockPicks(mockId) {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firestore = getFirestore(); // reference to our FS DB
-        // dispatch(handleAddPicksToMock(mockId));
+        console.log("handleGenerateMockPicks()");
 
         let teams = [
             {id: "AzXx6dYCLSBtqf4PsUqb", name: "Cardinals"},
@@ -51,9 +57,6 @@ export function handleGenerateMockPicks(mockId) {
             {id: "Pq89A6YvIbcaeLPaIhDK", name: "Pats"},
         ];
 
-
-        // Adding stuff to redux store. how to get pick IDs at creation ???
-
         let promisesArr = [];
         let count = 0;
         teams.map((team) => {
@@ -63,6 +66,7 @@ export function handleGenerateMockPicks(mockId) {
                 "teamId": team.id,
                 "playerId": "VWOHUogWGWpun5xWWnaR",
                 "mockDraftId": mockId,
+                "pickScore": 0
             };
 
             let x = firestore.collection('picks').add(pickObj);
@@ -85,13 +89,111 @@ export function editPickPlayer(id, playerId) {
     }
 }
 
+export function handleEditPickPlayer(id, playerId) {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+
+        const firestore = getFirestore();
+
+        firestore.collection('picks')
+            .doc(id)
+            .update({
+                playerId
+            }).then(() => {
+                console.log("Player successfully updated");
+                dispatch(editPickPlayer(id, playerId));
+        });
+    }
+}
+
 export function editPickTeam(id, teamId) {
-    console.log("PICK CONTENT");
-    console.log(id);
-    console.log(teamId);
     return {
         type: EDIT_PICK_TEAM,
         id,
         teamId
+    }
+}
+
+export function handleEditPickTeam(id, teamId) {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+
+        const firestore = getFirestore();
+
+        firestore.collection('picks')
+            .doc(id)
+            .update({
+                teamId
+            }).then(() => {
+            console.log("Team successfully updated");
+            dispatch(editPickTeam(id, teamId));
+        });
+    }
+}
+
+export function handleGradePick(id, index) {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+
+        const firestore = getFirestore();
+
+        let masterPick = {};
+        firestore.collection('picks')
+            .doc(id)
+            .get()
+            .then((pick) => {
+                masterPick =  pick;
+            })
+            .then(() => {
+
+                let masterPickPlayerId = masterPick._document.proto.fields.playerId.stringValue;
+
+                firestore.collection('mockdrafts')
+                    .get()
+                    .then((querySnapshot) => {
+                        querySnapshot.forEach((doc) => { // MOCK DRAFTS LOOP BEGINS
+                            let mockId = doc.id;
+
+                            let picks = [];
+                            firestore.collection('picks')
+                                .where('mockDraftId', '==', mockId)
+                                .get()
+                                .then((querySnapshot) => { // PICKS LOOP BEGINS
+                                    querySnapshot.forEach((doc) => {
+                                        picks.push({
+                                            id: doc.id,
+                                            pickNum: doc.data().pickNum,
+                                            playerId: doc.data().playerId
+                                        });
+
+                                        picks.sort((a, b) => a.pickNum - b.pickNum);
+                                    })
+                                    console.log(picks);
+                                })
+                                .then(() => {
+                                    const thisPick = picks[index-1];
+
+                                    let addToScore = 1;
+
+                                    if(thisPick.playerId === masterPickPlayerId) {
+                                        firestore.collection('picks').doc(thisPick.id).update({
+                                            pickScore: addToScore
+                                        }).then(() => {
+                                            // loop over sorted pick array from above and add up pick scores
+                                            // set that to mock draft score
+                                            firestore.collection('mockdrafts').doc(mockId)
+                                                .update({
+                                                    draftScore: doc.data().draftScore + addToScore
+                                                }).then(() => {
+                                                    console.log("Draft score updates")
+                                                })
+
+                                        });
+                                    }
+                                })
+
+                        })
+                    })
+
+            });
+
+
     }
 }

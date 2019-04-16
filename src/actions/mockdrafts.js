@@ -1,6 +1,10 @@
+import {changeUserMockId, handleChangeUserMockId} from "./users";
+import {setAppLoaded} from "./appLoaded";
+
 export const RECEIVE_MOCKDRAFTS = 'RECEIVE_MOCKDRAFTS';
 export const ADD_MOCK = 'ADD_MOCK';
 export const ADD_PICKS_TO_MOCK = 'ADD_PICKS_TO_MOCK';
+export const CHANGE_MOCK_USER_ID = 'CHANGE_MOCK_USER_ID';
 
 
 export function receiveMockdrafts(mockdrafts) {
@@ -28,28 +32,30 @@ export function handleAddPicksToMock(mockDraftId) {
             .where('mockDraftId', '==', mockDraftId)
             .get()
             .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                // doc.data() is never undefined for query doc snapshots
-                console.log(doc.id, " => ", doc.data());
-                picks.push({
-                    id: doc.id,
-                    pickNum: doc.data().pickNum
+                dispatch(setAppLoaded(false));
+                querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                    console.log(doc.id, " => ", doc.data());
+                    picks.push({
+                        id: doc.id,
+                        pickNum: doc.data().pickNum
+                    });
+
+                    picks.sort((a, b) => a.pickNum - b.pickNum);
                 });
+            }).then(() => {
+                let pickIds = picks.map((pick) => pick.id);
+                console.log(picks);
+                console.log(pickIds);
 
-                picks.sort((a, b) => a.pickNum - b.pickNum);
-            });
-        }).then(() => {
-            let pickIds = picks.map((pick) => pick.id);
-            console.log(picks);
-            console.log(pickIds);
-
-            firestore.collection('mockdrafts').doc(mockDraftId).update({
-                picks: pickIds
-            }).then(function() {
-                console.log("Document successfully written!");
-                // dispatch(addPicksToMock(mockDraftId, pickIds));
+                firestore.collection('mockdrafts').doc(mockDraftId).update({
+                    picks: pickIds
+                }).then(() => {
+                    console.log("Document successfully written!");
+                    // dispatch(addPicksToMock(mockDraftId, pickIds));
+                });
+                dispatch(setAppLoaded(true));
             })
-        })
 
     }
 }
@@ -68,10 +74,45 @@ export function handleAddMock() {
         let newMockDraft = {
             userId: "",
             picks: [],
-            score: 0
+            draftScore: 0,
+            mastermock: false
         };
 
         firestore.collection('mockdrafts').add(newMockDraft)
             .then(() => dispatch(addMock(newMockDraft)));
+    }
+}
+
+export function changeMockUserId(mockId, userId) {
+    return {
+        type: CHANGE_MOCK_USER_ID,
+        mockId,
+        userId
+    }
+}
+
+export function handleChangeMockUserId(mockId, userId) {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+        const firestore = getFirestore(); // reference to our FS DB
+
+        dispatch(setAppLoaded(false));
+
+        firestore.collection('mockdrafts').doc(mockId).update({
+            userId
+        }).then(() => {
+            console.log("Mock Draft User ID successfully updated!");
+            dispatch(changeMockUserId(mockId, userId));
+
+            firestore.collection('users').doc(userId).update({
+                draftId: mockId
+            }).then(() => {
+                console.log("User's MD ID successfully updated!");
+                dispatch(changeUserMockId(userId, mockId));
+                dispatch(setAppLoaded(true));
+            })
+
+        }).catch(() => {
+            dispatch(setAppLoaded(true));
+        })
     }
 }

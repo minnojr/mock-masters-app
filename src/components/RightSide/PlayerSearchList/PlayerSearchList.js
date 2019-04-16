@@ -12,8 +12,6 @@ class PlayerSearchList extends Component {
         return (
                 <ul className="mockdraftlist">
                     { this.props.searchResults.map((result) => {
-                        console.log("RESULT:");
-                        // console.log(result);
                         if (result)
                             return (
                                 <li key={i++} >
@@ -25,8 +23,6 @@ class PlayerSearchList extends Component {
 
                     }
                 </ul>
-        // {/*<div className="search-container">*/}
-        // </div>
         )
     }
 }

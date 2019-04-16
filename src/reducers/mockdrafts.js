@@ -1,7 +1,7 @@
 import {
     RECEIVE_MOCKDRAFTS,
     ADD_MOCK,
-    ADD_PICKS_TO_MOCK
+    ADD_PICKS_TO_MOCK, CHANGE_MOCK_USER_ID
 } from "../actions/mockdrafts";
 
 export default function mockdrafts (state = {}, action ) {
@@ -24,6 +24,14 @@ export default function mockdrafts (state = {}, action ) {
                     picks: action.picks
                 }
 
+            };
+        case CHANGE_MOCK_USER_ID :
+            return {
+                ...state,
+                [action.mockId] : {
+                    ...state[action.mockId],
+                    userId: action.userId
+                }
             };
         default :
             return state;

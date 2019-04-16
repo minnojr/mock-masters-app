@@ -1,61 +1,55 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import './mockdraftlist.css'
+import './mockdraftlist.css';
+import PickRow from '../PickRow/PickRow';
+import GradePickBtn from './GradePickBtn';
 
-import PickRow from '../PickRow/PickRow'
-import {compose} from "redux";
-import {firebaseConnect, firestoreConnect} from "react-redux-firebase";
+import { handleGradePick } from "../../../actions/picks";
+
 
 class MockDraftList extends Component {
 
-    render() {
+    handleGradeClick = (pick, index) => {
+        console.log("Grading.... ");
+        console.log(pick);
+        this.props.dispatch(handleGradePick(pick, index));
+    };
 
+    render() {
         const { mockdraft } = this.props;
 
-        // Prop MockDrafts is returning, but its not allowing me to map. At one re-render it is undefined.
-        // Consider memoizing the components eventually so that they only render once when needed
-        //
         if(!mockdraft.picks) {
-            // console.log(" NO MOCK HERE>.... ");
             return (
                 <div>This Mock Draft doesn't exits...</div>
             )
         } else {
-            mockdraft.picks.map(x => console.log(x));
             let key=0;
             return (
                 <div className="mockdraft-container">
                     <ul className="mockdraftlist">
+                        {/*<GradePickBtn/>*/}
 
                         {mockdraft.picks.map((pick) =>
                         {
-                        return (
-                        <li key={key++} >
-                            <PickRow pickId={pick} />
-                        </li>
-                        )
+                            return (
+                                <li key={key++} >
+                                    { mockdraft.mastermock
+                                        ? <GradePickBtn pickNum={key} pick={pick} onHandleClickBtn={this.handleGradeClick} />
+                                        // ? <GradePickBtn />
+                                        : null
+                                    }
+                                    <PickRow
+                                        pickId={pick}
+                                        isMobile={this.props.isMobile} />
+                                </li>
+                            )
                         })}
                     </ul>
 
                 </div>
             )
         }
-
     }
-}
+};
 
-function mapStateToProps({ focusPick }) {
-
-    // console.log("\n\n! ! ! ! ! ! ! ! ! ! !");
-    // console.log(firestore);
-    // const picks = firestore.ordered.picks;
-    //
-    // console.log(picks);
-
-    return {
-        // mockDraftPicks: mockdraft ? mockdraft.picks.map(pick => picks[pick]) : null,
-        focusPick
-    }
-}
-
-export default connect(mapStateToProps)(MockDraftList);
+export default connect()(MockDraftList);
