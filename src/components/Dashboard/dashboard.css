@@ -5,6 +5,10 @@
     height: 100%;
 }
 
+.mobile-dash {
+    background-color: #f8f8f8;
+}
+
 
 .app-side {
     display: flex;

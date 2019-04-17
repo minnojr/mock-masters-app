@@ -9,6 +9,64 @@ import {loginSuccess} from "./authedUser";
 export const RECEIVE_PICKS = 'RECEIVE_PICKS';
 export const EDIT_PICK_PLAYER = 'EDIT_PICK_PLAYER';
 export const EDIT_PICK_TEAM = 'EDIT_PICK_TEAM';
+export const SWAP_PICK_TEAMS = 'SWAP_PICK_TEAMS';
+
+export function swapPickTeams(toPickId, teamId) {
+    return {
+        type: SWAP_PICK_TEAMS,
+        toPickId,
+        teamId
+    }
+}
+
+export function handleSwapPickTeams(toPickId, fromPickId) {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+        const firestore = getFirestore();
+
+        const toPickPromise = firestore.collection('picks')
+            .doc(toPickId)
+            .get()
+            .then((doc) => {
+                return doc.data();
+            });
+
+
+
+        const fromPickPromise = firestore.collection('picks')
+            .doc(fromPickId)
+            .get()
+            .then((doc) => {
+                return doc.data();
+            });
+
+
+
+        toPickPromise.then((data) => {
+            firestore.collection('picks')
+                .doc(fromPickId)
+                .update({
+                    teamId: data.teamId
+                }).then(() => {
+                dispatch(swapPickTeams(fromPickId, data.teamId));
+
+            });
+        });
+
+
+        fromPickPromise.then((data) => {
+            firestore.collection('picks')
+                .doc(toPickId)
+                .update({
+                    teamId: data.teamId
+                }).then(() => {
+                dispatch(swapPickTeams(toPickId, data.teamId));
+            })
+        })
+
+
+    }
+}
+
 
 export function receivePicks(picks) {
     return {
@@ -20,7 +78,6 @@ export function receivePicks(picks) {
 export function handleGenerateMockPicks(mockId) {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firestore = getFirestore(); // reference to our FS DB
-        console.log("handleGenerateMockPicks()");
 
         let teams = [
             {id: "AzXx6dYCLSBtqf4PsUqb", name: "Cardinals"},

@@ -9,12 +9,14 @@ class PlayerRow extends Component {
 
     selectPlayerForPick = () => {
         const { focusPick, result } = this.props;
-        this.props.dispatch(handleEditPickPlayer(focusPick, result.id))
+        this.props.dispatch(handleEditPickPlayer(focusPick, result.id));
+        window.scrollTo(0,0);
     };
 
     selectTeamForPick = () => {
         const { focusPick, result } = this.props;
-        this.props.dispatch(handleEditPickTeam(focusPick, result.id))
+        this.props.dispatch(handleEditPickTeam(focusPick, result.id));
+        window.scrollTo(0,0);
     };
 
     render() {

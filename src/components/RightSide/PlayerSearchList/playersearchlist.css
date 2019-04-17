@@ -84,4 +84,8 @@
         text-align: left;
         padding: 0.5em 0.7em;
     }
+
+    .player-row-header {
+        border-radius: 0 !important;
+    }
 }

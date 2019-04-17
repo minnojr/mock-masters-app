@@ -32,7 +32,7 @@ class PickPlayerCard extends PureComponent {
         let editablePick = focusPick ? "focus_pick" : "editablePick";
 
         return (
-            <div ref={editablePick} className={`d-flex card col-8 md-card br5 ${editablePick}`} onClick={this.handleEditClick}>
+            <div ref={editablePick} draggable="false" className={`d-flex card col-8 md-card br5 ${editablePick}`} onClick={this.handleEditClick}>
                 <span className="info">
                     <span className="player-name">{ player.name }</span>
                     <span className="player-info">{ player.position }</span>

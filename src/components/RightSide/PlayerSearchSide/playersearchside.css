@@ -87,12 +87,20 @@ button.searchToggle {
     }
 
     .edit-pick .showing {
-        font-weight: 800;
+        /*font-weight: 800;*/
+        background-color: white !important;
+    }
+
+    .edit-pick .notShowing {
         background-color: #F8F8F8 !important;
     }
 
+    .edit-pick {
+        border-bottom: 0.5px solid lightgrey !important;
+    }
+
     .edit-pick button {
-        border-bottom: none !important;
+        /*border-bottom: none !important;*/
     }
 
 }

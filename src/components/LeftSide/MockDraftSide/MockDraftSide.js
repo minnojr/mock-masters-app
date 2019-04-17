@@ -14,8 +14,6 @@ class MockDraftSide extends PureComponent {
 
     componentDidMount() {
         this.props.dispatch(onEditPick(false));
-        console.log("REF:...");
-        console.log(this.props.myRef);
     }
 
     render() {
@@ -31,7 +29,6 @@ class MockDraftSide extends PureComponent {
                         <div className="nav-side nav-left">MOCK MASTERS</div>
 
                         <h3 className="text-center mb-4 md-header">MOCK DRAFT</h3>
-                        {/*<h6 className="text-center mb-4">Score: {this.props.mockdraft.draftScore}</h6>*/}
 
                         <MockDraftList
                             mockdraft={this.props.mockdraft}

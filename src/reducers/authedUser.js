@@ -13,19 +13,19 @@ const initState = {
 export default function authedUser (state = initState, action) {
     switch(action.type) {
         case LOGIN_ERROR :
-            console.log('login error');
+            // console.log('login error');
             return {
                 ...state,
                 authError: action.err.message
             };
         case LOGIN_SUCCESS :
-            console.log('login success');
+            // console.log('login success');
             return {
                 ...state,
                 authedError: null
             };
         case SIGNOUT_SUCCESS :
-            console.log('Signout success');
+            // console.log('Signout success');
             return {
                 ...state,
                 authedError: null

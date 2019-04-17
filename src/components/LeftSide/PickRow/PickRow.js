@@ -27,7 +27,7 @@ class PickRow extends PureComponent {
         return (
             <div>
                 <div className={`d-flex flex-row col-12 mb-2 ${focusClass}`}>
-                    <PickTeamCard pickId={pickId} focusPick={isFocusPick}/>
+                    <PickTeamCard pickId={pickId} pickNum={this.props.pickNum} focusPick={isFocusPick}/>
                     <PickPlayerCard
                         pickId={pickId}
                         focusPick={isFocusPick}

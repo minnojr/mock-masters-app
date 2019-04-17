@@ -11,9 +11,6 @@ import {onEditPick} from "../../actions/toggleMobile";
 
 
 class Dashboard extends Component {
-    componentWillMount() {
-        this.myRef = React.createRef();
-    }
 
     state = {
         showing: "leftSide",
@@ -40,9 +37,6 @@ class Dashboard extends Component {
     render() {
         const { auth, appLoaded, toggleMobile } = this.props;
 
-        console.log("toggleMobile State:");
-        console.log(toggleMobile);
-
         return (
             <span>
                 { appLoaded
@@ -57,7 +51,7 @@ class Dashboard extends Component {
 
 
                         <MediaQuery query="(max-width: 900px)">
-                            <div className="d-flex flex-column col-12 container p-0">
+                            <div className="d-flex mobile-dash flex-column col-12 container p-0">
                                 { !this.props.toggleMobile
                                     ? <MockDraftSide
                                         isMasterMock={false}

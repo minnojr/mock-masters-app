@@ -126,7 +126,7 @@ class PlayerSearchSide extends PureComponent {
                         }}/>
                         { this.state.showing === "playerSearch" &&
                         <span className="d-flex flex-row player-row-header">
-                        <span className="player-row-name pl-2">Player Results</span>
+                        <span className="player-row-name pl-2">Players</span>
                         {/*<span className="player-row-num">#</span>*/}
                         {/*<span className="player-row-name">PLAYER</span>*/}
                         {/*<span className="player-row-position">POS</span>*/}
@@ -139,7 +139,7 @@ class PlayerSearchSide extends PureComponent {
 
                         {this.state.showing === "teamSearch" &&
                         <span className="d-flex flex-row player-row-header pl-3">
-                        <span className="player-row-name pl-2">Team Results</span>
+                        <span className="player-row-name pl-2">Teams</span>
                         {/*<span className="team-row-name">TEAM</span>*/}
                     </span>
                         }
@@ -199,7 +199,7 @@ class PlayerSearchSide extends PureComponent {
                         }}/>
                         { this.state.showing === "playerSearch" &&
                         <span className="player-row-header">
-                            <span className="player-row-num pl-2">Player Results</span>
+                            <span className="player-row-num pl-2">Players</span>
                             {/*<span className="player-row-name">PLAYER</span>*/}
                             {/*<span className="player-row-position">POS</span>*/}
                             {/*<span className="player-row-school">SCHOOL</span>*/}
@@ -211,7 +211,7 @@ class PlayerSearchSide extends PureComponent {
 
                         {this.state.showing === "teamSearch" &&
                         <span className="player-row-header">
-                            <span className="player-row-num pl-2">Team Results</span>
+                            <span className="player-row-num pl-2">Teams</span>
                             {/*<span className="team-row-name">TEAM</span>*/}
                         </span>
                         }

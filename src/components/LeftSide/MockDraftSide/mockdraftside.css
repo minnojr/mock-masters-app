@@ -72,10 +72,14 @@
     }
 
     .mobile-nav-toggle button {
-        border: 1px solid lightgrey !important;
+        border: 1px solid #e3e3e3 !important;
         padding: 6px 50px;
         font-size: 12px;
         text-space: 5px;
+    }
+
+    .mobile-nav-toggle .notShowing {
+        background-color: white;
     }
 
     button.left {

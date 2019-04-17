@@ -12,7 +12,7 @@ import { showLoading, hideLoading } from "react-redux-loading";
 // const AUTHED_ID = "koltjGnqTCa5dFZAoRSmM7nJYM32";
 
 export function handleInitialData () {
-    console.log("*** ---> handleInitalData()...");
+    // console.log("*** ---> handleInitalData()...");
     return (dispatch, getState, { getFirebase, getFirestore }) => {
 
         const firestore = getFirestore(); // reference to our FS DB
@@ -72,7 +72,6 @@ export function handleInitialData () {
                             dispatch(receiveTeams(teamsObj));
                             dispatch(loginSuccess());
                             dispatch(hideLoading());
-                            console.log("1 ***********");
                             dispatch(setAppLoaded(true));
                     });
                 });
