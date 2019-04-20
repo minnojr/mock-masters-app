@@ -1,12 +1,10 @@
-import React, { Component, PureComponent } from 'react';
+import React, { Component } from 'react';
 import './dashboard.css'
 import MediaQuery from 'react-responsive';
 
 import MockDraftSide from '../LeftSide/MockDraftSide/MockDraftSide'
 import PlayerSearchSide from "../RightSide/PlayerSearchSide/PlayerSearchSide";
 import { connect } from "react-redux";
-import SignIn from "../SignIn/SignIn";
-import {handleInitialData} from "../../actions/shared";
 import {onEditPick} from "../../actions/toggleMobile";
 
 
@@ -35,7 +33,7 @@ class Dashboard extends Component {
     };
 
     render() {
-        const { auth, appLoaded, toggleMobile } = this.props;
+        const { appLoaded } = this.props;
 
         return (
             <span>

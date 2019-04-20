@@ -1,0 +1,63 @@
+.login-container {
+    /*border: 3px solid red;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F8F8F8;
+}
+
+.login-logo {
+    max-width: 100px;
+    min-width: 100px;
+}
+
+.login-box {
+    /*border: 1px solid blue;*/
+}
+
+.login-form {
+    padding: 2em;
+    max-width: 450px;
+    min-width: 350px;
+}
+
+.login-form input {
+    border: none;
+    border-radius: 50px;
+    padding: 0.5em 0.5em 0.5em 1.5em ;
+    -webkit-box-shadow: 0 8px 6px -6px #c6c6c6;
+    -moz-box-shadow: 0 8px 6px -6px #c6c6c6;
+    box-shadow: 0 8px 6px -6px #c6c6c6;
+}
+
+.login-form input:focus {
+    outline: 0px solid transparent;
+}
+.login-form button:focus {
+    outline: 0px solid transparent;
+}
+
+.login-form button:active {
+    outline: 0px solid transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow:none;
+}
+
+.login-form button {
+    border: none;
+    border-radius: 50px;
+    padding: 0.5em;
+    max-height: 41px;
+    -webkit-box-shadow: 0 8px 6px -6px #c6c6c6;;
+    -moz-box-shadow: 0 8px 6px -6px #c6c6c6;;
+    box-shadow: 0 8px 6px -6px #c6c6c6;;
+    background-color: #F54444;
+    color: white;
+    text-transform: uppercase;
+}
+
+.trouble-login {
+    font-size: 12px;
+}

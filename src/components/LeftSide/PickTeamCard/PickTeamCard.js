@@ -5,47 +5,31 @@ import {handleSwapPickTeams} from "../../../actions/picks";
 
 class PickTeamCard extends PureComponent {
 
-    state = {
-        toPickId: '',
-        fromPickId: ''
-    };
-
     onDragStart = (e,v) =>{
         e.dataTransfer.dropEffect = "move";
-        e.dataTransfer.setData( "text/plain", v );
-        console.log("FROM:");
-        console.log(v);
-        this.setState({ fromPickId: v });
-    };
+        e.dataTransfer.setData( "text/plain", v )
+    }
 
     allowDrop = ev =>{
         ev.preventDefault();
     };
 
-    onDrop = (e, v) =>{
+    onDrop = (e, v) => {
         e.preventDefault();
         const data = e.dataTransfer.getData("text/plain");
-        // let {rightContainer} = this.state;
-        // rightContainer.push(data);
-        // this.setState({ rightContainer });
-        console.log("TO:");
-        console.log(v);
-        console.log(this.state.fromPickId);
-
-        // this.props.dispatch(handleSwapPickTeams(v, this.state.fromPickId))
+        this.props.dispatch(handleSwapPickTeams(v, data))
     };
-
     render() {
 
-        const { team, pickNum } = this.props;
+        const { team, pickNum, pickId, focusPick } = this.props;
 
         return (
             <div
                 className="d-flex card col-4 mr-2 md-card br5"
-                // draggable="true"
-                // onDragStart={ (e) => this.onDragStart(e, pickId) }
-                // onDragOver={this.allowDrop}
-                // onDrop={ (e) => this.onDrop(e, pickId) }
+                draggable="true"
+                onDragStart={ (e) => this.onDragStart(e, pickId) }
+                onDragOver={this.allowDrop}
+                onDrop={ (e) => this.onDrop(e, pickId) }
             >
 
                 <span className="info team-card">
@@ -69,6 +53,7 @@ function mapStateToProps({ teams, picks }, { teamId, pickId }) {
     return {
         pickNum : pickNum ? pickNum : zero,
         team : team ? team : emptyObj,
+        pickId: pickId ? pickId : "0000"
     }
 }
 

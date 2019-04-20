@@ -1,11 +1,33 @@
-import {changeUserMockId, handleChangeUserMockId} from "./users";
+import {changeUserMockId} from "./users";
 import {setAppLoaded} from "./appLoaded";
 
 export const RECEIVE_MOCKDRAFTS = 'RECEIVE_MOCKDRAFTS';
 export const ADD_MOCK = 'ADD_MOCK';
 export const ADD_PICKS_TO_MOCK = 'ADD_PICKS_TO_MOCK';
 export const CHANGE_MOCK_USER_ID = 'CHANGE_MOCK_USER_ID';
+export const CHANGE_MOCK_NAME = 'CHANGE_MOCK_NAME';
 
+
+function changeMockName(newName, mockId) {
+    return {
+        type: CHANGE_MOCK_NAME,
+        mockId,
+        newName
+    }
+}
+
+export function handleChangeMockName(newName, mockId) {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+        const firestore = getFirestore(); // reference to our FS DB
+
+        firestore.collection('mockdrafts').doc(mockId).update({
+            mockName: newName
+        }).then(() => {
+            console.log("Name updated");
+            dispatch(changeMockName(newName, mockId))
+        });
+    }
+}
 
 export function receiveMockdrafts(mockdrafts) {
     return {
@@ -75,7 +97,8 @@ export function handleAddMock() {
             userId: "",
             picks: [],
             draftScore: 0,
-            mastermock: false
+            mastermock: false,
+            mockName: "NFL MOCK DRAFT 2019"
         };
 
         firestore.collection('mockdrafts').add(newMockDraft)

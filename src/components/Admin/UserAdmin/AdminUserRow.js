@@ -1,24 +1,6 @@
 import React, { PureComponent } from 'react';
-import { connect } from "react-redux";
-import { compose } from "redux";
-import {firebaseConnect} from "react-redux-firebase";
 
 class AdminUserRow extends PureComponent {
-
-    state = {
-        userIdInput: ""
-    };
-
-    handleClick = () => {
-        this.props.addPicksToMock(this.props.mockdraftId);
-    };
-
-    handleUIDchange = (e) => {
-        e.preventDefault();
-        this.setState({
-            userIdInput: e.target.value
-        })
-    }
 
     render() {
         const { user, userId } = this.props;
@@ -36,13 +18,4 @@ class AdminUserRow extends PureComponent {
     }
 }
 
-function mapStateToProps(state) {
-    console.log("state");
-    console.log(state);
-    return {
-
-    }
-}
-
-
-export default connect(mapStateToProps)(AdminUserRow);
+export default (AdminUserRow);

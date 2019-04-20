@@ -1,14 +1,13 @@
 import React, { PureComponent, Fragment } from 'react';
-import ReactDOM from 'react-dom'
 import { connect } from "react-redux";
 import './mockdraftside.css'
-import moize from 'moize';
-import { compose } from "redux";
-import { firestoreConnect } from "react-redux-firebase";
 
 import MockDraftList from '../MockDraftList/MockDraftList'
 import MediaQuery from "react-responsive";
 import {onEditPick} from "../../../actions/toggleMobile";
+import EditableHeader from './EditableHeader'
+import {signOut} from "../../../actions/authedUser";
+
 
 class MockDraftSide extends PureComponent {
 
@@ -16,8 +15,15 @@ class MockDraftSide extends PureComponent {
         this.props.dispatch(onEditPick(false));
     }
 
+    handleSignOut = () => {
+        this.props.dispatch(signOut());
+    };
+
     render() {
 
+        const { mockdraft, isMobile } = this.props;
+
+        let z = mockdraft.mockName.length;
 
         const leftShowing = this.props.showing === false ? 'showing' : 'notShowing';
         const rightShowing = this.props.showing === true ? 'showing' : 'notShowing';
@@ -28,11 +34,11 @@ class MockDraftSide extends PureComponent {
                     <div className="app-side left-side">
                         <div className="nav-side nav-left">MOCK MASTERS</div>
 
-                        <h3 className="text-center mb-4 md-header">MOCK DRAFT</h3>
+                        <EditableHeader className="ml-4 mr-4 mb-0 pb-2 md-header" mid={this.props.mid} value={mockdraft.mockName} />
 
                         <MockDraftList
-                            mockdraft={this.props.mockdraft}
-                            isMobile={this.props.isMobile} />
+                            mockdraft={mockdraft}
+                            isMobile={isMobile} />
                     </div>
                 </MediaQuery>
 
@@ -47,7 +53,7 @@ class MockDraftSide extends PureComponent {
                                     className={`left ${leftShowing}`}
                                     value={"leftSide"}
                                     onClick={this.props.toggleDashboards}>
-                                    MY MOCK
+                                    MY DRAFT
                                 </button>
                                 <button
                                     className={`right ${rightShowing}`}
@@ -57,7 +63,7 @@ class MockDraftSide extends PureComponent {
                                 </button>
                             </div>
 
-                            <h3 className="text-center md-header">MOCK DRAFT</h3>
+                        <EditableHeader className="text-center md-header" mid={this.props.mid} value={mockdraft.mockName} />
                             {/*<h6 className="text-center mb-4">Score: {this.props.mockdraft.draftScore}</h6>*/}
 
                             <MockDraftList
@@ -73,25 +79,17 @@ class MockDraftSide extends PureComponent {
     }
 }
 
-function mapStateToProps({  authedUser, mockdrafts, firestore }, { isMasterMock }) {
+function mapStateToProps({  authedUser, mockdrafts }) {
 
-    let mockdraft;
     const empty = {};
-    if(isMasterMock) {
-        mockdraft = firestore.ordered.mastermock ? firestore.ordered.mastermock[0]  : empty;
-    } else {
-        const mid = Object.keys(mockdrafts)[0];
-        mockdraft = mockdrafts[mid] ? mockdrafts[mid] : empty;
-    }
+    const zero = 0;
+    const mid = Object.keys(mockdrafts)[zero] ? Object.keys(mockdrafts)[zero] : zero;
+    const mockdraft = mockdrafts[mid] ? mockdrafts[mid] : empty;
 
     return {
         mockdraft,
+        mid
     }
 }
 
-export default compose(
-    connect(mapStateToProps),
-    firestoreConnect([
-        { collection: 'mastermock' }
-    ])
-)(MockDraftSide);
+export default connect(mapStateToProps)(MockDraftSide);

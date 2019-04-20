@@ -11,13 +11,38 @@
     background-color: #F54444;
 }
 
+.mock-name {
+    width: 100%;
+    border-bottom: 0.5px solid lightgrey;
+    margin-left: 1.5rem !important;
+}
+
 .mockdraftside {
     position: fixed;
     bottom: 0;
 }
 
+.editMockName {
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+.editMockName:hover {
+    cursor: pointer;
+}
+
 .md-header {
     font-weight: 600;
+    /*border-bottom: 0.5px solid lightgrey;*/
+    display: inline-block;
+}
+
+.md-header:hover {
+    cursor: pointer;
+}
+
+[contenteditable]:focus {
+    outline: 0px solid transparent;
 }
 
 .nav-side a h6 {
@@ -102,7 +127,21 @@
     /*}*/
 
     .md-header {
-        display: none;
+        margin: 1em 2em 1em 2em;
+        padding: 0.5em 0 0 1em;
+        font-size: 16px;
+        display: inline-block;
+    }
+
+    .editMockName {
+        font-size: 13px;
+        margin-left: 0px;
+    }
+
+    .mock-name {
+        width: 100%;
+        border-bottom: 0.5px solid lightgrey;
+        margin-left: 0 !important;
     }
 
 

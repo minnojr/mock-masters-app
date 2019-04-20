@@ -50,7 +50,7 @@ class PlayerSearchSide extends PureComponent {
 
 
     render() {
-        const { players, focusPick, teams, user } = this.props;
+        const { players, focusPick, teams, user, pickNum } = this.props;
 
         if(!players) {
             return (
@@ -96,7 +96,13 @@ class PlayerSearchSide extends PureComponent {
         }
 
         const playerSearchClass = this.state.showing === "playerSearch" ? 'showing' : 'notShowing';
-        const teamSearchClass = this.state.showing === "teamSearch" ? 'showing' : 'notShowing';
+        // const teamSearchClass = this.state.showing === "teamSearch" ? 'showing' : 'notShowing';
+
+        let teamSearchClass = 'nowShowing';
+        if(this.state.showing === "teamSearch") {
+            teamSearchClass = 'showing'
+            filteredSearchResults.sort((a, b) => a.order - b.order );
+        }
 
         const leftShowing = this.props.showing === false ? 'showing' : 'notShowing';
         const rightShowing = this.props.showing === true ? 'showing' : 'notShowing';
@@ -115,9 +121,9 @@ class PlayerSearchSide extends PureComponent {
 
                         <PickRow pickId={focusPick} focusPick={true} />
 
-                        <div className="edit-pick d-flex mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
-                            <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Team Search</button>
-                            <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Player Search</button>
+                        <div className="edit-pick mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
+                            <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Mock Trade</button>
+                            <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Mock Pick</button>
                         </div>
 
 
@@ -125,7 +131,7 @@ class PlayerSearchSide extends PureComponent {
                             this.updateQuery(searchQuery)
                         }}/>
                         { this.state.showing === "playerSearch" &&
-                        <span className="d-flex flex-row player-row-header">
+                        <span className="player-row-header">
                         <span className="player-row-name pl-2">Players</span>
                         {/*<span className="player-row-num">#</span>*/}
                         {/*<span className="player-row-name">PLAYER</span>*/}
@@ -154,9 +160,6 @@ class PlayerSearchSide extends PureComponent {
 
 
 
-
-
-
                 <MediaQuery query="(max-width: 900px)">
 
                     <div className="d-flex flex-column app-side mobile p-0">
@@ -177,7 +180,7 @@ class PlayerSearchSide extends PureComponent {
                                 className={`left ${leftShowing}`}
                                 value={"leftSide"}
                                 onClick={this.props.toggleDashboards}>
-                                MY MOCK
+                                MY DRAFT
                             </button>
                             <button
                                 className={`right ${rightShowing}`}
@@ -188,8 +191,10 @@ class PlayerSearchSide extends PureComponent {
                         </div>
 
                         <div className="edit-pick">
-                            <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Team Search</button>
-                            <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Player Search</button>
+                            <div className=" ml-1 text-center pickNum">Round: 1</div>
+                            <div className=" ml-1 text-center pickNum">Pick: {pickNum}</div>
+                            <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Mock Trade</button>
+                            <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Mock Pick</button>
                         </div>
 
                         <PickRow pickId={focusPick} focusPick={true} />
@@ -230,6 +235,9 @@ class PlayerSearchSide extends PureComponent {
 function mapStateToProps({ focusPick, picks, teams, players, firebase }) {
     const emptyStr= "";
     const emptyObj = {};
+    const pick = picks[focusPick];
+    const team = teams[pick.teamId];
+    const pickNum = pick.pickNum;
     // console.log(firebase.profile);
 
     return {
@@ -237,7 +245,8 @@ function mapStateToProps({ focusPick, picks, teams, players, firebase }) {
         players,
         focusPick,
         picks,
-        teams: teams ? teams : emptyStr
+        teams: teams ? teams : emptyStr,
+        pickNum
     }
 }
 

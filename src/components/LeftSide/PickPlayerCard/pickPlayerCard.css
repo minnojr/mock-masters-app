@@ -1,4 +1,8 @@
 
+#focusPickLabel:hover {
+    background-color: red !important;
+}
+
 .editablePick:hover {
      background-color: #DEEEFF;
      color: black;
@@ -17,10 +21,16 @@
 
 .editablePick:hover span.info {
     display: none;
+    height: 0;
+    visibility: hidden;
+    width: 0;
 }
 
 .editPickLabel{
-    display: none;
+    height: 0;
+    visibility: hidden;
+    /*display: none;*/
+    width: 0;
 }
 
 .editablePick .info-2 {
@@ -30,10 +40,15 @@
     flex-grow: 1;
     justify-content: space-evenly;
     align-items: center;
+    /*height: auto;*/
+    /*visibility: visible;*/
+    /*width: auto;*/
 }
 
 .editablePick:hover span.editPickLabel{
     display: contents;
+    visibility: visible;
+    width: 100%;
 }
 
 .hover-player-name {
@@ -48,13 +63,33 @@
     font-size: 25px;
 }
 
+.hover-remove-pick {
+    width: 50%;
+    text-align: center;
+    font-size: 23px;
+}
+
 .focusPick {
     cursor: not-allowed;
 }
 
+.remove-pick:hover {
+    background-color: #FEE3E3 !important;
+}
+
+.remove-pick span:hover {
+    background-color: #FEE3E3 !important;
+}
+
+
+
 .md-card {
     display: flex;
     padding: 0.5em !important;
+    -webkit-box-shadow: 0 8px 6px -6px #c6c6c6;;
+    -moz-box-shadow: 0 8px 6px -6px #c6c6c6;;
+    box-shadow: 0 8px 6px -6px #c6c6c6;;
+    background-color: #F54444;
 }
 
 .md-card .info {

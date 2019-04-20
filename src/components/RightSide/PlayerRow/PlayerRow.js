@@ -21,11 +21,14 @@ class PlayerRow extends Component {
 
     render() {
 
-        const { result, type, orderNum } = this.props;
+        const { result, type, orderNum, alreadyPicked } = this.props;
+
+        const cantPickAgain = alreadyPicked ? "alreadyPicked" : "";
+
 
         return (
             <div>
-                <div className="d-flex flex-row search-row">
+                <div className={`d-flex flex-row search-row ${cantPickAgain}`}>
                     {type === 'playerSearch' &&
                         <span className="d-flex align-items-center flex-row player-row">
                             <span className="player-row-num">{ orderNum }.</span>
@@ -34,9 +37,15 @@ class PlayerRow extends Component {
                             <span className="player-row-school">{ result.school }</span>
                             {/*<span className="player-row-conference">{ result.conference }</span>*/}
                             {/*<span className="player-row-offOrDef">{ result.offOrDef }</span>*/}
-                            <button className="add-btn pt-1 pb-1 pr-2 pl-2 ml-3" onClick={this.selectPlayerForPick}>
-                                <FontAwesomeIcon icon="plus" />
-                            </button>
+                            {
+                                alreadyPicked
+                                ?
+                                    ""
+                                :
+                                    <button className="add-btn pt-1 pb-1 pr-2 pl-2 ml-3" onClick={this.selectPlayerForPick}>
+                                        <FontAwesomeIcon icon="plus" />
+                                    </button>
+                            }
                         </span>
                         }
 
@@ -44,9 +53,17 @@ class PlayerRow extends Component {
                         <span className="d-flex align-items-center flex-row player-row">
                                 <span className="player-row-num">{ orderNum }.</span>
                                 <span className="team-row-name">{ result.name }</span>
-                                <button className="add-btn pt-1 pb-1 pr-2 pl-2 ml-3" onClick={this.selectTeamForPick}>
-                                    <FontAwesomeIcon icon="plus" />
-                                </button>
+
+                            {
+                                alreadyPicked
+                                    ?
+                                    ""
+                                    :
+                                    <button className="add-btn pt-1 pb-1 pr-2 pl-2 ml-3"
+                                            onClick={this.selectTeamForPick}>
+                                        <FontAwesomeIcon icon="plus"/>
+                                    </button>
+                            }
                             </span>
                         }
                 </div>

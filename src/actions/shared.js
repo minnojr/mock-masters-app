@@ -20,6 +20,9 @@ export function handleInitialData () {
         const s = getState();
         const uid = s.firebase.auth.uid;
 
+        console.log("UID");
+        console.log(uid);
+
 
         let mockDraftObj = {};
         let mockId = "";
@@ -35,6 +38,7 @@ export function handleInitialData () {
                     focusPick = doc.data().picks[0];
                     mockDraftObj[doc.id] = doc.data();
                 })
+                console.log(mockDraftObj);
             }).then(() => {
 
             let picksObj = {};

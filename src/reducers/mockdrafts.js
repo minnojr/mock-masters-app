@@ -1,7 +1,9 @@
 import {
     RECEIVE_MOCKDRAFTS,
     ADD_MOCK,
-    ADD_PICKS_TO_MOCK, CHANGE_MOCK_USER_ID
+    ADD_PICKS_TO_MOCK,
+    CHANGE_MOCK_USER_ID,
+    CHANGE_MOCK_NAME
 } from "../actions/mockdrafts";
 
 export default function mockdrafts (state = {}, action ) {
@@ -33,6 +35,14 @@ export default function mockdrafts (state = {}, action ) {
                     userId: action.userId
                 }
             };
+        case CHANGE_MOCK_NAME :
+            return {
+                ...state,
+                [action.mockId]: {
+                    ...state[action.mockId],
+                    mockName: action.newName
+                }
+            }
         default :
             return state;
     }

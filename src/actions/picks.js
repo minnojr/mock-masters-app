@@ -1,10 +1,5 @@
-import {addPicksToMock, handleAddPicksToMock, receiveMockdrafts} from "./mockdrafts";
-import {setAppLoaded} from "./appLoaded";
-import {hideLoading, showLoading} from "react-redux-loading";
-import {receivePlayers} from "./players";
-import {setFocusPick} from "./focusPick";
-import {receiveTeams} from "./teams";
-import {loginSuccess} from "./authedUser";
+import { handleAddPicksToMock } from "./mockdrafts";
+
 
 export const RECEIVE_PICKS = 'RECEIVE_PICKS';
 export const EDIT_PICK_PLAYER = 'EDIT_PICK_PLAYER';
@@ -122,6 +117,7 @@ export function handleGenerateMockPicks(mockId) {
                 "pickNum": count.toString(),
                 "teamId": team.id,
                 "playerId": "VWOHUogWGWpun5xWWnaR",
+                "original_team": team.id,
                 "mockDraftId": mockId,
                 "pickScore": 0
             };
@@ -229,6 +225,43 @@ export function handleGradePick(id, index) {
 
                                     let addToScore = 1;
 
+                                    // console.log("\n\nMaster Mock Pick");
+                                    // console.log(masterPickPlayerId);
+                                    // console.log("User Mock Pick");
+                                    // console.log(masterPick);
+
+
+                                    // Get the player info for MASTER MOCK:
+                                    let userPick = {};
+                                    let masterPick = {};
+                                    firestore.collection('players')
+                                        .doc(masterPickPlayerId)
+                                        .get()
+                                        .then((pick) => {
+                                            masterPick =  pick._document.proto.fields;
+
+                                            // console.log("\n\nMaster Mock Pick");
+                                            // console.log(masterPick);
+
+                                            firestore.collection('players')
+                                                .doc(thisPick.playerId)
+                                                .get()
+                                                .then((pick) => {
+                                                    userPick =  pick._document.proto.fields;
+                                                })
+                                                .then(() => {
+
+                                                    console.log("\n\nMaster Mock Pick");
+                                                    console.log(masterPick.conference.stringValue);
+                                                    console.log("\nUser Mock Pick");
+                                                    console.log(userPick.conference.stringValue);
+                                                })
+                                        });
+
+
+                                            // let masterPickPlayerId = masterPick._document.proto.fields.playerId.stringValue;
+
+                                    // Start to check for scoring matches here and then add points to addToScore
                                     if(thisPick.playerId === masterPickPlayerId) {
                                         firestore.collection('picks').doc(thisPick.id).update({
                                             pickScore: addToScore

@@ -1,18 +1,16 @@
 import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import LoadingBar, {hideLoading} from "react-redux-loading";
+import LoadingBar  from "react-redux-loading";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserEdit } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { Redirect } from 'react-router-dom'
-
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 import './App.css'
 
 import { handleInitialData } from "../../actions/shared";
-import {setAppLoaded} from "../../actions/appLoaded";
 
 
 import Dashboard from '../Dashboard/Dashboard';
@@ -21,7 +19,7 @@ import SignUp from '../Admin/MockDraftAdmin/SignUp';
 import Admin from '../Admin/Admin';
 import AdminMockDraftRow from '../Admin/MockDraftAdmin/MockDraftAdmin';
 import UserAdmin from '../Admin/UserAdmin/UserAdmin';
-import MasterMock from '../Admin/MasterMock';
+import {signOut} from "../../actions/authedUser";
 
 
 
@@ -35,6 +33,7 @@ import MasterMock from '../Admin/MasterMock';
 class App extends Component {
     componentDidMount() {
         this.props.dispatch(handleInitialData());
+        // this.props.dispatch(signOut());
     }
 
 
@@ -42,6 +41,8 @@ class App extends Component {
     render() {
         library.add(faUserEdit);
         library.add(faPlus);
+        library.add(faEdit);
+        library.add(faTrash);
 
         const { auth, appLoaded }  = this.props;
 
@@ -59,7 +60,6 @@ class App extends Component {
                                     <Route path='/mm-only/admin' exact component={ Admin } />
                                     <Route path='/mm-only/admin/mockdrafts' exact component={ AdminMockDraftRow } />
                                     <Route path='/mm-only/admin/users' exact component={ UserAdmin } />
-                                    <Route path='/mm-only/admin/master-mock' exact component={ MasterMock } />
                                 </span>
                         }
                     </div>

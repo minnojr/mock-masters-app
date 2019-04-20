@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signIn } from "../../actions/authedUser";
-import authedUser from "../../reducers/authedUser";
-import { Redirect } from 'react-router-dom'
+import mmLogo from '../../assets/img/mm-logo.png'
+
+import './signin.css'
 
 
 
@@ -59,11 +60,12 @@ class SignIn extends Component {
 
         return (
             <div>
-                <div className="login-container d-flex flex-column mt-lg-5 w-100">
+                <div className="login-container d-flex flex-column">
+                    <img src={mmLogo} className="login-logo"/>
                     <div className="flex-column login-box w-100">
-                        <h4 className="d-flex justify-content-center">Signin</h4>
+                        {/*<h4 className="d-flex justify-content-center">Signin</h4>*/}
                         <div className="d-flex justify-content-center">
-                            <form className="d-flex flex-column w-25" onSubmit={this.handleLogin}>
+                            <form className="d-flex login-form flex-column w-25" onSubmit={this.handleLogin}>
                                 <input
                                     id="textOne"
                                     value={ emailInput }
@@ -79,16 +81,10 @@ class SignIn extends Component {
                                     placeholder="Password"
                                 />
                                 <br />
-                                <input
-                                    id="textOne"
-                                    value={ codeInput }
-                                    onChange={this.handleCodeChange}
-                                    placeholder="Entry Code"
-                                />
-                                <br />
-                                <button type="submit">Sign In</button>
-                                <div className="m-3">
+                                <button type="submit">Login</button>
+                                <div className="text-center m-3">
                                     { authError ? <p>{authError}</p>: null}
+                                    <span className="trouble-login">Login support: team@mockmasters.com</span>
                                 </div>
                             </form>
                         </div>
