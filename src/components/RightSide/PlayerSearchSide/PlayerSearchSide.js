@@ -191,8 +191,8 @@ class PlayerSearchSide extends PureComponent {
                         </div>
 
                         <div className="edit-pick">
-                            <div className=" ml-1 text-center pickNum">Round: 1</div>
-                            <div className=" ml-1 text-center pickNum">Pick: {pickNum}</div>
+                            {/*<div className=" ml-1 text-center pickNum">Round: 1</div>*/}
+                            {/*<div className=" ml-1 text-center pickNum">Pick: {pickNum}</div>*/}
                             <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Mock Trade</button>
                             <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Mock Pick</button>
                         </div>
