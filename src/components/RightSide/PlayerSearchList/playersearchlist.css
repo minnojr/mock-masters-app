@@ -10,25 +10,34 @@
 }
 
 .search-container ul {
-    padding: 0 1em;
     background-color: white;
     border-bottom: 0.5px solid #D7D7D7;
     border-left: 0.5px solid #D7D7D7;
     border-right: 0.5px solid #D7D7D7;
     overflow-y: scroll;
     min-height: 100px;
+}
 
+.search-container ul li {
+    padding: 0 1em;
+}
+
+.search-container ul li:hover {
+    background-color: #efefef;
 }
 
 .player-row-header {
     flex-grow: 1;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 500;
     padding: 0.7em 1em;
-    background-color: #F8F8F8 !important;
-    border-top-left-radius: 0.50rem !important;
-    border-top-right-radius: 0.50rem !important;
+    /*background-color: #F8F8F8 !important;*/
+    background-color: #d8d8d8 !important;
+    border-top-left-radius: 0.4rem !important;
+    border-top-right-radius: 0.4rem !important;
     border: 0.5px solid #D7D7D7;
     margin: 10px 15px 0 15px;
+    text-transform: uppercase;
 
 }
 

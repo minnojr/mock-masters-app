@@ -56,7 +56,7 @@ button.searchToggle {
     padding: 5px 50px;
     font-size: 12px;
     text-space: 5px;
-    width: 50%;
+    width: 25% !important;
     /*border-radius: 50px;*/
     -webkit-box-shadow: 0 8px 6px -6px #c6c6c6;
     -moz-box-shadow: 0 8px 6px -6px #c6c6c6;
@@ -109,6 +109,23 @@ button.searchToggle {
         width: 100% !important;
     }
 
+
+    .removePick {
+        width: 25%;
+        background-color: white;
+        font-size: 12px;
+        border-radius: 0.5em;
+        border: 0.5px solid lightgrey;
+        margin-left: 1em;
+        margin-bottom: 1em;
+        display: block;
+        min-height: 28px;
+    }
+
+    .removePick:focus {
+        outline: 0px solid transparent;
+    }
+
     .searchbar {
         min-height: 25px !important;
         max-height: 30px !important;
@@ -119,13 +136,18 @@ button.searchToggle {
         background-color: #DEEEFF !important;
     }
 
+    .edit-pick {
+        margin-bottom: 5px !important;
+        margin-top: 6px !important;
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        font-weight: 800 !important;
+    }
+
     .edit-pick .notShowing {
         background-color: #F8F8F8 !important;
     }
 
-    .edit-pick {
-        border-bottom: 0.5px solid lightgrey !important;
-    }
 
     .edit-pick button {
         /*border-bottom: none !important;*/

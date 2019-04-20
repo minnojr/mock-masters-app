@@ -6,13 +6,13 @@ class SearchBar extends Component {
     render() {
 
         return (
-            <form className='ml-3 mr-3'>
+            <form className='search-bar-form ml-3'>
                 <span className=''>
                         <input
                             className="searchbar"
                             type='text'
                             name='player'
-                            // placeholder="Search..."
+                            // placeholder="..."
                             value={this.props.query}
                             onChange={(event) => this.props.updateQuery(event.target.value)}
                         />

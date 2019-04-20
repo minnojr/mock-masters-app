@@ -10,6 +10,7 @@ import PlayerSearchList from '../PlayerSearchList/PlayerSearchList';
 import SearchBar from '../SearchBar/SearchBar'
 import PickRow from '../../LeftSide/PickRow/PickRow';
 import MediaQuery from "react-responsive";
+import {handleEditPickPlayer} from "../../../actions/picks";
 
 
 class PlayerSearchSide extends PureComponent {
@@ -46,6 +47,11 @@ class PlayerSearchSide extends PureComponent {
 
     handleSignOut = () => {
         this.props.dispatch(signOut());
+    };
+
+    handleRemoveClick = () => {
+        const emptyPlayer = "VWOHUogWGWpun5xWWnaR";
+        this.props.dispatch(handleEditPickPlayer(this.props.focusPick, emptyPlayer));
     };
 
 
@@ -124,12 +130,12 @@ class PlayerSearchSide extends PureComponent {
                         <div className="edit-pick mt-3 mb-2 ml-3 mr-3 flex-row justify-content-center">
                             <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Mock Trade</button>
                             <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Mock Pick</button>
+                            <SearchBar type={this.state.showing} query={this.state.searchQuery} updateQuery={(searchQuery) => {
+                                this.updateQuery(searchQuery)
+                            }}/>
                         </div>
 
 
-                        <SearchBar type={this.state.showing} query={this.state.searchQuery} updateQuery={(searchQuery) => {
-                            this.updateQuery(searchQuery)
-                        }}/>
                         { this.state.showing === "playerSearch" &&
                         <span className="player-row-header">
                         <span className="player-row-name pl-2">Players</span>
@@ -175,7 +181,7 @@ class PlayerSearchSide extends PureComponent {
                             }
 
                         </div>
-                        <div className="mobile-nav-toggle main_nav">
+                        <div className="mobile-nav-toggle main_nav mb-3">
                             <button
                                 className={`left ${leftShowing}`}
                                 value={"leftSide"}
@@ -190,27 +196,23 @@ class PlayerSearchSide extends PureComponent {
                             </button>
                         </div>
 
+                        <button className="removePick" onClick={this.handleRemoveClick}>Remove Pick</button>
+                        <PickRow pickId={focusPick} focusPick={true} />
+
+
                         <div className="edit-pick">
                             {/*<div className=" ml-1 text-center pickNum">Round: 1</div>*/}
                             {/*<div className=" ml-1 text-center pickNum">Pick: {pickNum}</div>*/}
                             <button className={`left searchToggle ${teamSearchClass}`}  value={"teamSearch"} onClick={this.toggleSearchResults}>Mock Trade</button>
                             <button className={`right searchToggle ${playerSearchClass}`} value={"playerSearch"} onClick={this.toggleSearchResults}>Mock Pick</button>
+                            <SearchBar type={this.state.showing} query={this.state.searchQuery} updateQuery={(searchQuery) => {
+                                this.updateQuery(searchQuery)
+                            }}/>
                         </div>
 
-                        <PickRow pickId={focusPick} focusPick={true} />
-
-                        <SearchBar type={this.state.showing} query={this.state.searchQuery} updateQuery={(searchQuery) => {
-                            this.updateQuery(searchQuery)
-                        }}/>
                         { this.state.showing === "playerSearch" &&
                         <span className="player-row-header">
                             <span className="player-row-num pl-2">Players</span>
-                            {/*<span className="player-row-name">PLAYER</span>*/}
-                            {/*<span className="player-row-position">POS</span>*/}
-                            {/*<span className="player-row-school">SCHOOL</span>*/}
-                            {/*<span className="player-row-conference">CONF</span>*/}
-                            {/*<span className="ml-4 player-row-conference">DRAFT</span>*/}
-                                {/*<span className="player-row-offOrDef">O/D</span>*/}
                         </span>
                         }
 

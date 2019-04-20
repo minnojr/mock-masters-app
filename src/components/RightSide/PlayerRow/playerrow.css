@@ -44,7 +44,8 @@ button.searchToggle {
     min-width: 71%;
     max-width: 71%;
     font-size: 12px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
+    letter-spacing: 0.5px;
 }
 
 /*.team-row-name {*/
@@ -60,7 +61,7 @@ button.searchToggle {
 .player-row {
     flex-grow: 1;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px !important;
 }
 
 .player-row-num {
@@ -74,6 +75,7 @@ button.searchToggle {
     max-width: 35%;
     min-width: 35%;
     text-align: left;
+    letter-spacing: 0.5px;
     /*flex-grow: 3;*/
 }
 
@@ -103,7 +105,7 @@ button.searchToggle {
 }
 
 .search-container .search-row {
-    padding: 1em;
+    padding: 0.6em;
 }
 
 .alreadyPicked {

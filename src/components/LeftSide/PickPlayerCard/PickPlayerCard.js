@@ -30,11 +30,11 @@ class PickPlayerCard extends PureComponent {
 
         const { focusPick, player } = this.props;
 
-        // let editablePick = focusPick ? "focus_pick" : "editablePick";
-        let editablePick = "editablePick";
+        let editablePick = focusPick ? "focus_pick" : "editablePick";
+        // let editablePick = "editablePick";
 
 
-        if (!focusPick) {
+        // if (!focusPick) {
             return (
                 <div ref={editablePick} draggable="false" className={`d-flex card col-8 md-card br5 ${editablePick}`} onClick={this.handleEditClick}>
                     <span className="info">
@@ -53,26 +53,26 @@ class PickPlayerCard extends PureComponent {
                     </span>
                 </div>
             )
-        } else {
-            return (
-                <div ref={editablePick} draggable="false" className={`d-flex remove-pick card col-8 md-card br5 ${editablePick}`} onClick={this.handleRemoveClick}>
-                    <span className="info">
-                        <span className="player-name">{ player.name }</span>
-                        <span className="player-info">{ player.position }</span>
-                        <span className="player-info">{ player.school }</span>
-                        {/*<span className="player-info">Score: { pick.pickScore }</span>*/}
-                        {/*<span className="player-info">{ player.conference }</span>*/}
-                        {/*<span className="player-info">{ player.offOrDef }</span>*/}
-                    </span>
-                    <span className="editPickLabel">
-                        <span className="info-2">
-                            {/*<span className="hover-player-name">REMOVE</span>*/}
-                            <span className="hover-remove-pick"><FontAwesomeIcon icon="trash" /></span>
-                        </span>
-                    </span>
-                </div>
-            )
-        }
+        // } else {
+        //     return (
+        //         <div ref={editablePick} draggable="false" className={`d-flex remove-pick card col-8 md-card br5 ${editablePick}`} onClick={this.handleRemoveClick}>
+        //             <span className="info">
+        //                 <span className="player-name">{ player.name }</span>
+        //                 <span className="player-info">{ player.position }</span>
+        //                 <span className="player-info">{ player.school }</span>
+        //                 {/*<span className="player-info">Score: { pick.pickScore }</span>*/}
+        //                 {/*<span className="player-info">{ player.conference }</span>*/}
+        //                 {/*<span className="player-info">{ player.offOrDef }</span>*/}
+        //             </span>
+        //             <span className="editPickLabel">
+        //                 <span className="info-2">
+        //                     {/*<span className="hover-player-name">REMOVE</span>*/}
+        //                     <span className="hover-remove-pick"><FontAwesomeIcon icon="trash" /></span>
+        //                 </span>
+        //             </span>
+        //         </div>
+        //     )
+        // }
 
     }
 }
