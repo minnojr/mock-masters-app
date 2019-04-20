@@ -196,9 +196,19 @@ class PlayerSearchSide extends PureComponent {
                             </button>
                         </div>
 
-                        <button className="removePick" onClick={this.handleRemoveClick}>Remove Pick</button>
+
                         <PickRow pickId={focusPick} focusPick={true} />
 
+                        {/*<hr className="search-hr"/>*/}
+
+                        <div className="d-flex flex-row">
+                            <div className="d-flex col-4">
+                                <button className="removePick">Revert Trade</button>
+                            </div>
+                            <div className="d-flex col-8">
+                                <button className="removePick" onClick={this.handleRemoveClick}>Remove Pick</button>
+                            </div>
+                        </div>
 
                         <div className="edit-pick">
                             {/*<div className=" ml-1 text-center pickNum">Round: 1</div>*/}

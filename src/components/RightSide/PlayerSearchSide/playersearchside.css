@@ -109,31 +109,49 @@ button.searchToggle {
         width: 100% !important;
     }
 
+    /*.search-hr {*/
+        /*margin: 0 auto;*/
+        /*width: 50%;*/
+    /*}*/
+
 
     .removePick {
-        width: 25%;
+        width: 100%;
         background-color: white;
         font-size: 12px;
         border-radius: 0.5em;
         border: 0.5px solid lightgrey;
         margin-left: 1em;
-        margin-bottom: 1em;
+        margin-bottom: 0.5em;
         display: block;
-        min-height: 28px;
+        min-height: 10px;
+        -webkit-box-shadow: 0 4px 3px -3px #c6c6c6;
+        -moz-box-shadow: 0 4px 3px -3px #c6c6c6;
+        box-shadow: 0 4px 3px -3px #c6c6c6;
     }
 
     .removePick:focus {
         outline: 0px solid transparent;
     }
 
+    .search-bar-form {
+        width: 41% !important;
+    }
+
     .searchbar {
         min-height: 25px !important;
         max-height: 30px !important;
+        /*width: 37% !important;*/
+        display: inline-block;
     }
 
     .edit-pick .showing {
         /*font-weight: 800;*/
         background-color: #DEEEFF !important;
+    }
+
+    button.searchToggle {
+        padding: 7px 10px !important;
     }
 
     .edit-pick {
@@ -142,6 +160,7 @@ button.searchToggle {
         margin-left: 1rem !important;
         margin-right: 1rem !important;
         font-weight: 800 !important;
+        font-size: 12px !important;
     }
 
     .edit-pick .notShowing {
@@ -150,7 +169,8 @@ button.searchToggle {
 
 
     .edit-pick button {
-        /*border-bottom: none !important;*/
+        width: 26% !important;
+        font-size: 11px !important;
     }
 
 }
