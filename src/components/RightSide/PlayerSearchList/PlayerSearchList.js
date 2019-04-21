@@ -15,7 +15,6 @@ class PlayerSearchList extends Component {
                     { this.props.searchResults.map((result) => {
                         if (result) {
                             let alreadyPicked = this.props.playerPickIds.includes(result.id);
-                            console.log(alreadyPicked);
                             return (
                                 <li key={i++}>
                                     <PlayerRow alreadyPicked={alreadyPicked} orderNum={i} result={result} type={this.props.type}/>
@@ -33,7 +32,6 @@ class PlayerSearchList extends Component {
 
 function mapStateToProps({ picks, players }) {
     const empty = [];
-    console.log("MDDDD");
 
     let playerPickIds = [];
     if(picks) {

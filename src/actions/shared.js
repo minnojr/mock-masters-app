@@ -47,7 +47,11 @@ export function handleInitialData () {
                 .get()
                 .then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
-                        picksObj[doc.id] = doc.data();
+                        const pickData = {
+                            ...doc.data(),
+                            id: doc.id
+                        };
+                        picksObj[doc.id] = pickData;
                     })
                 }).then(() => {
 

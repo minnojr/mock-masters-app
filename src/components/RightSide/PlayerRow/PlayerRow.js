@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { handleEditPickPlayer, handleEditPickTeam } from "../../../actions/picks";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import './playerrow.css'
 
 
@@ -10,13 +11,13 @@ class PlayerRow extends Component {
     selectPlayerForPick = () => {
         const { focusPick, result } = this.props;
         this.props.dispatch(handleEditPickPlayer(focusPick, result.id));
-        window.scrollTo(0,0);
+        // window.scrollTo(0,0);
     };
 
     selectTeamForPick = () => {
         const { focusPick, result } = this.props;
         this.props.dispatch(handleEditPickTeam(focusPick, result.id));
-        window.scrollTo(0,0);
+        // window.scrollTo(0,0);
     };
 
     render() {

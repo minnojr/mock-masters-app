@@ -7,6 +7,8 @@ import { faUserEdit } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faForward } from '@fortawesome/free-solid-svg-icons'
+import { faBackward } from '@fortawesome/free-solid-svg-icons'
 
 import './App.css'
 
@@ -43,6 +45,8 @@ class App extends Component {
         library.add(faPlus);
         library.add(faEdit);
         library.add(faTrash);
+        library.add(faForward);
+        library.add(faBackward);
 
         const { auth, appLoaded }  = this.props;
 

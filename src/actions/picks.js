@@ -6,6 +6,7 @@ export const EDIT_PICK_PLAYER = 'EDIT_PICK_PLAYER';
 export const EDIT_PICK_TEAM = 'EDIT_PICK_TEAM';
 export const SWAP_PICK_TEAMS = 'SWAP_PICK_TEAMS';
 
+
 export function swapPickTeams(toPickId, teamId) {
     return {
         type: SWAP_PICK_TEAMS,
@@ -152,7 +153,6 @@ export function handleEditPickPlayer(id, playerId) {
             .update({
                 playerId
             }).then(() => {
-                console.log("Player successfully updated");
                 dispatch(editPickPlayer(id, playerId));
         });
     }
@@ -176,7 +176,6 @@ export function handleEditPickTeam(id, teamId) {
             .update({
                 teamId
             }).then(() => {
-            console.log("Team successfully updated");
             dispatch(editPickTeam(id, teamId));
         });
     }

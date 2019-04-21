@@ -6,7 +6,7 @@ class SearchBar extends Component {
     render() {
 
         return (
-            <form className='search-bar-form ml-3'>
+            <form className='search-bar-form ml-2'>
                 <span className=''>
                         <input
                             className="searchbar"

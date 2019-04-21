@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { signOut } from "../../../actions/authedUser";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import './playersearchside.css'
 
@@ -11,6 +12,7 @@ import SearchBar from '../SearchBar/SearchBar'
 import PickRow from '../../LeftSide/PickRow/PickRow';
 import MediaQuery from "react-responsive";
 import {handleEditPickPlayer} from "../../../actions/picks";
+import { setFocusPick } from "../../../actions/focusPick";
 
 
 class PlayerSearchSide extends PureComponent {
@@ -52,6 +54,49 @@ class PlayerSearchSide extends PureComponent {
     handleRemoveClick = () => {
         const emptyPlayer = "VWOHUogWGWpun5xWWnaR";
         this.props.dispatch(handleEditPickPlayer(this.props.focusPick, emptyPlayer));
+    };
+
+    handleRevertTRade = () => {
+        const emptyPlayer = "VWOHUogWGWpun5xWWnaR";
+        this.props.dispatch(handleEditPickPlayer(this.props.focusPick, emptyPlayer));
+    };
+
+    nextPick = () => {
+        const { pickNum, picks, dispatch } = this.props;
+
+        const pickNumInt = parseInt(pickNum);
+
+        if (pickNumInt < 32) {
+            const nextPickNum = (pickNumInt + 1).toString();
+
+            let nextPick = pickNum;
+            for (let pick in picks) {
+                const np = picks[pick];
+                if (np.pickNum === nextPickNum) {
+                    nextPick = np;
+                }
+            }
+            dispatch(setFocusPick(nextPick.id));
+        }
+    };
+
+    lastPick = () => {
+        const { pickNum, picks, dispatch } = this.props;
+
+        const pickNumInt = parseInt(pickNum);
+
+        if (pickNumInt > 1) {
+            const nextPickNum = (pickNumInt - 1).toString();
+
+            let nextPick = pickNum;
+            for (let pick in picks) {
+                const np = picks[pick];
+                if (np.pickNum === nextPickNum) {
+                    nextPick = np;
+                }
+            }
+            dispatch(setFocusPick(nextPick.id));
+        }
     };
 
 
@@ -201,12 +246,18 @@ class PlayerSearchSide extends PureComponent {
 
                         {/*<hr className="search-hr"/>*/}
 
-                        <div className="d-flex flex-row">
-                            <div className="d-flex col-4">
+                        <div className="ml-2 mr-2 mt-2">
+                            <div className="rp col-2">
+                                <button className="removePick" onClick={this.lastPick}><FontAwesomeIcon icon="backward" /></button>
+                            </div>
+                            <div className="rp col-4">
                                 <button className="removePick">Revert Trade</button>
                             </div>
-                            <div className="d-flex col-8">
+                            <div className="rp col-4">
                                 <button className="removePick" onClick={this.handleRemoveClick}>Remove Pick</button>
+                            </div>
+                            <div className="rp col-2">
+                                <button className="removePick" onClick={this.nextPick}><FontAwesomeIcon icon="forward" /></button>
                             </div>
                         </div>
 
@@ -250,12 +301,14 @@ function mapStateToProps({ focusPick, picks, teams, players, firebase }) {
     const pick = picks[focusPick];
     const team = teams[pick.teamId];
     const pickNum = pick.pickNum;
-    // console.log(firebase.profile);
+    // console.log("PICKS: ");
+    // console.log(parseInt(pick.pickNum) + 1);
 
     return {
         user: firebase.profile ? firebase.profile : emptyObj,
         players,
         focusPick,
+        // originalPick:  pick.original_team ? pick.original_team : pick.teamId,
         picks,
         teams: teams ? teams : emptyStr,
         pickNum

@@ -94,6 +94,8 @@
     .mobile-nav-toggle {
         margin: 0 auto;
         margin-bottom: 0px;
+        /*position: fixed;*/
+        /*top: 50px;*/
     }
 
     .mobile-nav-toggle button {
@@ -101,6 +103,10 @@
         padding: 6px 50px;
         font-size: 12px;
         text-space: 5px;
+    }
+
+    .mobile-nav-toggle button:focus {
+        outline: 0px solid transparent;
     }
 
     .mobile-nav-toggle .notShowing {
